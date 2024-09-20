@@ -1,17 +1,17 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : 192.168.222.173
+ Source Server         : 124.70.135.41
  Source Server Type    : MySQL
  Source Server Version : 80400 (8.4.0)
- Source Host           : 192.168.222.173:3306
+ Source Host           : 124.70.135.41:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 20/09/2024 13:10:54
+ Date: 20/09/2024 18:12:24
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 217 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 225 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -163,6 +163,13 @@ INSERT INTO `applications` VALUES (212, ' ECharts', 'https://echarts.apache.org/
 INSERT INTO `applications` VALUES (213, '桑帛云API', 'https://api.lolimi.cn/assets/img/favicons/favicon.png', 'https://api.lolimi.cn/', '桑帛云API,简单、易用、免费。提供多种实用接口,助力开发者高效工作。欢迎体验,探索无限可能,快速的免费API数据接口服务,服务器采用国内,稳定运行,官方交流群：516666275', 'active', 45, '2024-09-09 09:32:55.914', '2024-09-09 09:33:29.976', -8, '#000000');
 INSERT INTO `applications` VALUES (215, '网易云课堂', 'tabler:book', 'https://study.163.com/', '网易云课堂，一个专注于成人终身学习的在线教育平台。立足于实用性的要求, 与优质的教育内容创作者一起，为您提供全面、有效的在线学习内容。', 'active', 49, '2024-09-19 14:12:26.928', '2024-09-19 14:30:46.510', 0, '#BF4444');
 INSERT INTO `applications` VALUES (216, 'Element', 'https://element.eleme.cn/favicon.ico', 'https://element.eleme.cn/', 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库', 'active', 67, '2024-09-19 14:45:45.113', '2024-09-19 14:46:31.640', 0, '#000000');
+INSERT INTO `applications` VALUES (217, 'Open WebUI', 'https://www.zhozw.cn/static/favicon.png', 'https://www.zhozw.cn/', 'Open WebUI 是一个多功能且直观的开源用户界面,与 ollama 配合使用,它作为一个webui,为用户提供了一个私有化的 ChatGPT 体验。', 'active', 42, '2024-09-20 15:46:58.837', '2024-09-20 15:47:45.384', 0, '#000000');
+INSERT INTO `applications` VALUES (218, 'IP 检测工具', 'https://ping0.cc/favicon.ico', 'https://ping0.cc/', '高质量IP归属地查询、检测、全球小鸡监控平台。', 'active', 45, '2024-09-20 17:21:37.833', '2024-09-20 17:21:37.833', 0, '#000000');
+INSERT INTO `applications` VALUES (219, '数字玩家', 'https://www.opkfc.com/favicon.ico', 'https://www.opkfc.com/list', '数字玩家-免费共享的GPT账户', 'active', 44, '2024-09-20 17:47:57.069', '2024-09-20 17:47:57.069', 0, '#000000');
+INSERT INTO `applications` VALUES (220, 'OpenUI', 'mdi:material-ui', 'https://openui.fly.dev/ai/new', 'OpenUI是一个基于现代Web标准（如HTML5, CSS3 和 ES6）的轻量级框架，它的核心理念是提供可自定义的组件和模块化的设计，以适应各种项目需求。通过OpenUI，您可以快速地搭建用户界面，节省时间和精力，同时保持代码的整洁与可维护性。', 'active', 44, '2024-09-20 17:50:44.845', '2024-09-20 18:03:09.354', 0, '#6BBC1A');
+INSERT INTO `applications` VALUES (221, 'AI工具集官网', 'https://ai-bot.cn/wp-content/uploads/2023/03/ai-bot-square-logo.png', 'https://ai-bot.cn/', 'AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除、AI视频制作、AI音频转录、AI辅助编程、AI音乐生成、AI绘画设计、AI对话聊天等AI工具集合大全，以及AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！', 'active', 44, '2024-09-20 17:51:10.773', '2024-09-20 17:51:10.773', 0, '#000000');
+INSERT INTO `applications` VALUES (223, 'DWAI', 'https://dw.dwai.world/list/favicon.ico', 'https://dw.dwai.world/list', 'ChatGPT公益站点', 'active', 44, '2024-09-20 17:54:49.119', '2024-09-20 17:58:18.388', 0, '#000000');
+INSERT INTO `applications` VALUES (224, 'AMZ123亚马逊导航', 'tabler:layout-navbar-collapse', 'https://amz123.com', 'AMZ123亚马逊导航是一家致力于服务中国跨境电商从业者的综合平台，以让跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上AMZ123。', 'active', 44, '2024-09-20 18:07:21.940', '2024-09-20 18:07:21.940', 0, '#29B1B5');
 
 -- ----------------------------
 -- Table structure for menus
@@ -242,7 +249,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$NQEavYcv82w9O0kJplzDD.vk4FZh0oQofOf6uGQe7Sq5MVpGjMSAC', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI2ODk1NDA0fQ.vpv4pwepeFglCGCcx-IkRlpIZzjmnk9uqpUR200MXjM', '2024-09-11 14:40:42.069', '2024-09-20 13:10:04.101', NULL, 1);
-INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-19 11:22:20.103', NULL, 0);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI2OTAzOTczfQ.F-i4lP-3J3VjbvDXK7jGwj8K-vnEJrBGrelFXHyQ99o', '2024-09-11 14:40:42.069', '2024-09-20 15:32:53.540', NULL, 1);
+INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
