@@ -1,0 +1,57 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile  # 指向后端的 Dockerfile
+    container_name: znav_backend
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=123456
+      - DB_HOST=mysql  # 修改为 MySQL 容器的名称
+      - DB_PORT=3306
+      - DB_NAME=znav
+      - JWT_SECRET=supersecret
+    ports:
+      - "8080:8080"  # 暴露后端的 8080 端口
+    networks:
+      - znav_network
+    depends_on:
+      - mysql  # 等待 MySQL 启动
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile  # 指向前端的 Dockerfile
+    container_name: znav_frontend
+    ports:
+      - "80:80"  # 暴露前端的 80 端口
+    depends_on:
+      - backend  # 等待 backend 服务启动
+    networks:
+      - znav_network
+    restart: always
+
+  mysql:
+    image: mysql:8.4.0-oraclelinux8
+    container_name: znav_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=znav  # 自动创建数据库
+      - TZ=Asia/Shanghai
+    ports:
+      - "3306:3306"  # 暴露 MySQL 的端口
+    volumes:
+      - ./znav.sql:/docker-entrypoint-initdb.d/znav.sql  # 启动时自动导入 znav.sql
+    networks:
+      - znav_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 3
+    restart: always
+
+networks:
+  znav_network:
+    driver: bridge
