@@ -3,15 +3,15 @@
 
  Source Server         : 192.168.222.173
  Source Server Type    : MySQL
- Source Server Version : 80300 (8.3.0)
+ Source Server Version : 80400 (8.4.0)
  Source Host           : 192.168.222.173:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
- Target Server Version : 80300 (8.3.0)
+ Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 19/09/2024 14:51:33
+ Date: 20/09/2024 13:10:54
 */
 
 SET NAMES utf8mb4;
@@ -242,7 +242,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$NQEavYcv82w9O0kJplzDD.vk4FZh0oQofOf6uGQe7Sq5MVpGjMSAC', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI2ODA5Mjc2fQ.0vWjsSMTF1OEd3OquhZ3Xsjhj3n1Wd1LCYfj8a-LkB4', '2024-09-11 14:40:42.069', '2024-09-19 13:14:36.581', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$NQEavYcv82w9O0kJplzDD.vk4FZh0oQofOf6uGQe7Sq5MVpGjMSAC', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI2ODk1NDA0fQ.vpv4pwepeFglCGCcx-IkRlpIZzjmnk9uqpUR200MXjM', '2024-09-11 14:40:42.069', '2024-09-20 13:10:04.101', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-19 11:22:20.103', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

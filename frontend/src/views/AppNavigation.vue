@@ -889,6 +889,7 @@ body {
   width: 100%;
   min-height: 400px;
   border-right: 0;
+  font-weight: bold;
 }
 
 .el-header {
