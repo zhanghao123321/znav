@@ -915,7 +915,6 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
   padding: 0;
   margin-bottom: 20px;
   height: 100px;
