@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 20/09/2024 18:12:24
+ Date: 23/09/2024 17:15:17
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 225 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 227 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -116,7 +116,7 @@ INSERT INTO `applications` VALUES (134, '网易邮箱', 'https://email.163.com/f
 INSERT INTO `applications` VALUES (135, '秘塔AI搜索', 'https://metaso.cn/favicon.ico', 'https://metaso.cn/', '秘塔AI搜索，没有广告，直达结果', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (136, 'huggingface', 'mdi:face-outline', 'https://huggingface.co/', 'huggingface 共同为大模型在垂直行业的应用提供平台产品和解决方案汇集人工智能行业上下游企业链,并积极与生态合作伙伴共同探索更多领域的落地应用.', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (137, '互连协议IP查询', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/logo_9d92bdd1d270d.png', 'https://www.cip.cc/', '查IP(www.cip.cc)网站, 提供免费的IP查询服务,命令行查询IP, 并且支持\'PC网站, 手机网站, 命令行(Windows/UNIX/Linux)\' 三大平台, 是个多平台的IP查询网站, 更新即使, 数据准确是我们的目标', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', -8, '#000000');
-INSERT INTO `applications` VALUES (138, 'crontab时间计算', 'https://tool.lu/favicon.ico', 'https://tool.lu/crontab/', 'crontab执行时间计算', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (138, 'crontab时间计算', 'eos-icons:cronjob', 'https://tool.lu/crontab/', 'crontab执行时间计算', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-23 17:12:39.149', 0, '#0BCCD3');
 INSERT INTO `applications` VALUES (139, 'DeepL翻译', 'https://static.deepl.com/img/favicon/favicon_16.png', 'https://www.deepl.com/zh/translator', '即时翻译文本&完整的文档文件。为个人和团队提供准确的翻译。每天有数百万人使用DeepL进行翻译。', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (140, 'DuckDuck邮箱', 'https://duckduckgo.com/email/favicon.ico', 'https://duckduckgo.com/email/settings/autofill', 'DuckDuckGo是一个互联网搜索引擎', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (141, 'FOFA网络空间测绘', 'https://fofa.info/favicon.ico', 'https://fofa.info/', 'FOFA 是白帽汇推出的一款网络空间搜索引擎，它通过进行网络空间测绘，能够帮助研究人员或者企业迅速进行网络资产匹配，例如进行漏洞影响范围分析、应用分布统计、应用流行度排名统计等。', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -126,7 +126,7 @@ INSERT INTO `applications` VALUES (144, '美国地址生成器', 'https://static
 INSERT INTO `applications` VALUES (145, '接码平台', 'https://receive-sms-free.cc/favicon.ico', 'https://receive-sms-free.cc/Free-USA-Phone-Number/', 'receive-sms-free手机短信接码平台', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (146, 'Random Credit Card', 'https://namso-gen.com/favicon.svg', 'https://namso-gen.com/?tab=advance\\u0026network=MasterCard', 'Enhance testing, validation, and development with Namsogen – the ultimate solution for precise, valid credit card numbers tailored for seamless integration.', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (147, 'Free Credit Card Checker', 'https://checker.top/icons/favicon-128x128.png', 'https://checker.top/', 'Online credit card checker instantly. Check CCN and CCV free. CC checker and Bin checker live or dead, free forever.', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (148, '随机密码生成器 - 在线工具', 'https://tool.lu/favicon.ico', 'https://tool.lu/strrandom/', '随机密码生成器，随机字符串生成器', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (148, '随机密码生成器 - 在线工具', 'fluent:password-16-regular', 'https://tool.lu/strrandom/', '随机密码生成器，随机字符串生成器', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-23 17:13:50.223', 0, '#EA0B0B');
 INSERT INTO `applications` VALUES (149, 'Diffchecker - 在线比较文本', 'https://www.diffchecker.com/favicon.ico', 'https://www.diffchecker.com/zh-Hans/', 'Diffchecker 将比较文本以找出两个文本文件之间的差异。只需粘贴您的文件，然后单击查找差异！', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (150, '后浪云', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/logo_c6ed96945cac5.png', 'https://www.idc.net/addons?_plugin=13&_controller=index&_action=index', '后浪云专注于简单好用，价格厚道的香港云服务器、美国云服务器、香港服务器、美国服务器、日韩服务器等全球IDC服务。APNIC+ARIN双会员，IDC+ISP+ICP资质，15年运营经验。服务热线：4000-070-040。服务网站: IDC.NET。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (151, '知乎网', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon-152.81060cab_54b3dd6a1de4f.png', 'https://www.zhihu.com/', '知乎,中文互联网高质量的问答社区和创作者聚集的原创内容平台', 'active', 48, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -164,12 +164,14 @@ INSERT INTO `applications` VALUES (213, '桑帛云API', 'https://api.lolimi.cn/a
 INSERT INTO `applications` VALUES (215, '网易云课堂', 'tabler:book', 'https://study.163.com/', '网易云课堂，一个专注于成人终身学习的在线教育平台。立足于实用性的要求, 与优质的教育内容创作者一起，为您提供全面、有效的在线学习内容。', 'active', 49, '2024-09-19 14:12:26.928', '2024-09-19 14:30:46.510', 0, '#BF4444');
 INSERT INTO `applications` VALUES (216, 'Element', 'https://element.eleme.cn/favicon.ico', 'https://element.eleme.cn/', 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库', 'active', 67, '2024-09-19 14:45:45.113', '2024-09-19 14:46:31.640', 0, '#000000');
 INSERT INTO `applications` VALUES (217, 'Open WebUI', 'https://www.zhozw.cn/static/favicon.png', 'https://www.zhozw.cn/', 'Open WebUI 是一个多功能且直观的开源用户界面,与 ollama 配合使用,它作为一个webui,为用户提供了一个私有化的 ChatGPT 体验。', 'active', 42, '2024-09-20 15:46:58.837', '2024-09-20 15:47:45.384', 0, '#000000');
-INSERT INTO `applications` VALUES (218, 'IP 检测工具', 'https://ping0.cc/favicon.ico', 'https://ping0.cc/', '高质量IP归属地查询、检测、全球小鸡监控平台。', 'active', 45, '2024-09-20 17:21:37.833', '2024-09-20 17:21:37.833', 0, '#000000');
+INSERT INTO `applications` VALUES (218, 'IP 检测工具', 'oui:token-ip', 'https://ping0.cc/', '高质量IP归属地查询、检测、全球小鸡监控平台。', 'active', 45, '2024-09-20 17:21:37.833', '2024-09-23 17:14:18.319', 0, '#000000');
 INSERT INTO `applications` VALUES (219, '数字玩家', 'https://www.opkfc.com/favicon.ico', 'https://www.opkfc.com/list', '数字玩家-免费共享的GPT账户', 'active', 44, '2024-09-20 17:47:57.069', '2024-09-20 17:47:57.069', 0, '#000000');
 INSERT INTO `applications` VALUES (220, 'OpenUI', 'mdi:material-ui', 'https://openui.fly.dev/ai/new', 'OpenUI是一个基于现代Web标准（如HTML5, CSS3 和 ES6）的轻量级框架，它的核心理念是提供可自定义的组件和模块化的设计，以适应各种项目需求。通过OpenUI，您可以快速地搭建用户界面，节省时间和精力，同时保持代码的整洁与可维护性。', 'active', 44, '2024-09-20 17:50:44.845', '2024-09-20 18:03:09.354', 0, '#6BBC1A');
 INSERT INTO `applications` VALUES (221, 'AI工具集官网', 'https://ai-bot.cn/wp-content/uploads/2023/03/ai-bot-square-logo.png', 'https://ai-bot.cn/', 'AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除、AI视频制作、AI音频转录、AI辅助编程、AI音乐生成、AI绘画设计、AI对话聊天等AI工具集合大全，以及AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！', 'active', 44, '2024-09-20 17:51:10.773', '2024-09-20 17:51:10.773', 0, '#000000');
 INSERT INTO `applications` VALUES (223, 'DWAI', 'https://dw.dwai.world/list/favicon.ico', 'https://dw.dwai.world/list', 'ChatGPT公益站点', 'active', 44, '2024-09-20 17:54:49.119', '2024-09-20 17:58:18.388', 0, '#000000');
 INSERT INTO `applications` VALUES (224, 'AMZ123亚马逊导航', 'tabler:layout-navbar-collapse', 'https://amz123.com', 'AMZ123亚马逊导航是一家致力于服务中国跨境电商从业者的综合平台，以让跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上AMZ123。', 'active', 44, '2024-09-20 18:07:21.940', '2024-09-20 18:07:21.940', 0, '#29B1B5');
+INSERT INTO `applications` VALUES (225, '腾讯安全|威胁情报中心', 'https://tix.qq.com/favicon.ico', 'https://tix.qq.com/', '第一手威胁情报,小程序一手掌握 情报动态 当前有效安全情报。', 'active', 43, '2024-09-23 15:45:24.855', '2024-09-23 15:46:37.737', 0, '#000000');
+INSERT INTO `applications` VALUES (226, '程序员开发工具大全', 'fluent:window-dev-tools-16-filled', 'https://tool.ip138.com/', '程序员开发工具提供众多程序开发过程中需要用到的在线工具，有JSON格式化、 Javascript格式化、CSS格式化、URL编码、时间戳转换、正则表达式等各种在线工具。', 'active', 45, '2024-09-23 17:11:42.237', '2024-09-23 17:11:42.237', 0, '#159235');
 
 -- ----------------------------
 -- Table structure for menus
@@ -249,7 +251,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI2OTAzOTczfQ.F-i4lP-3J3VjbvDXK7jGwj8K-vnEJrBGrelFXHyQ99o', '2024-09-11 14:40:42.069', '2024-09-20 15:32:53.540', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3MTYzODQ0fQ.Pm87g6XZXhkt39tTD7fRNKBh6cMbrHTaZc1CIivbrns', '2024-09-11 14:40:42.069', '2024-09-23 15:44:04.343', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
