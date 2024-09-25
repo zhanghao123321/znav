@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 23/09/2024 17:15:17
+ Date: 25/09/2024 15:13:13
 */
 
 SET NAMES utf8mb4;
@@ -36,14 +36,14 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 227 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 229 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
 -- ----------------------------
 INSERT INTO `applications` VALUES (62, 'LINUX DO', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32_e575feda544c0.png', 'https://linux.do/', '真诚、友善、团结、专业，共建你我引以为荣之社区。', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-05 01:27:48.022', -7, '#000000');
 INSERT INTO `applications` VALUES (63, '水墨图床', 'https://img.ink/favicon.ico', 'https://img.ink/', '图片映客--水墨图床，免费专业的高速外链图床-免费高速图床-致力于创建一流的图片加速空间', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (64, 'chatgpt', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon.82af6fe1_0add8de44f2d9.png', 'https://www.chatgpt.com/', 'ChatGPT 是OpenAI研发的一款聊天机器人程序', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-06 09:01:51.257', -10, '#000000');
+INSERT INTO `applications` VALUES (64, 'ChatGPT', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon.82af6fe1_0add8de44f2d9.png', 'https://www.chatgpt.com/', 'ChatGPT 是OpenAI研发的一款聊天机器人程序', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-25 15:06:52.375', -10, '#000000');
 INSERT INTO `applications` VALUES (65, 'New API', 'https://zh.hooz.fun/logo.png', 'https://zh.hooz.fun/', 'OpenAI 接口聚合管理，支持多种渠道包括 Azure，可用于二次分发管理 key，仅单可执行文件，已打包好 Docker 镜像，一键部署，开箱即用', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', -9, '#000000');
 INSERT INTO `applications` VALUES (66, 'Claude', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon_0240e958f5fb5.png', 'https://claude.ai/', 'Claude，美国人工智能初创公司Anthropic发布的大型语言模型家族', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (67, 'Kimi', 'https://statics.moonshot.cn/kimi-chat/favicon.ico', 'https://kimi.moonshot.cn/', 'Kimi 是一个有着超大“内存”的智能助手，可以一口气读完二十万字的小说，还会上网冲浪，快来跟他聊聊吧 | Kimi.ai - Moonshot AI 出品的智能助手', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-04 03:33:37.155', 0, '#000000');
@@ -159,7 +159,7 @@ INSERT INTO `applications` VALUES (177, 'gin-vue-admin', 'https://www.gin-vue-ad
 INSERT INTO `applications` VALUES (178, 'go-admin', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/logo_2cf8cd32e705b.png', 'https://www.go-admin.pro/', 'GIN-VUE-ADMIN 是一款基于GIN+VUE+ElementPlus开发的全栈基础开发平台', 'active', 70, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (208, 'Prompt', 'https://agicto.com/agicto-logo-icon.png', 'https://agicto.com/prompt', 'Prompt模版', 'active', 44, '2024-09-04 05:08:52.979', '2024-09-04 05:08:52.979', 0, '#000000');
 INSERT INTO `applications` VALUES (211, 'PearAPI调用平台', 'https://api.pearktrue.cn/favicon.ico', 'https://api.pearktrue.cn/', '欢迎来到PearAPI服务页面,本服务由PearNo提供技术支持,永久免费稳定提供各类API服务接口.', 'active', 45, '2024-09-05 07:55:41.549', '2024-09-06 08:12:51.375', -9, '#000000');
-INSERT INTO `applications` VALUES (212, ' ECharts', 'https://echarts.apache.org/en/images/favicon.png?_v_=20240226', 'https://echarts.apache.org/', 'Apache ECharts, a powerful, interactive charting and visualization library for browser', 'active', 67, '2024-09-06 09:53:04.728', '2024-09-19 14:46:48.414', 0, '#000000');
+INSERT INTO `applications` VALUES (212, 'ECharts', 'https://echarts.apache.org/en/images/favicon.png?_v_=20240226', 'https://echarts.apache.org/', 'Apache ECharts, a powerful, interactive charting and visualization library for browser', 'active', 67, '2024-09-06 09:53:04.728', '2024-09-19 14:46:48.414', 0, '#000000');
 INSERT INTO `applications` VALUES (213, '桑帛云API', 'https://api.lolimi.cn/assets/img/favicons/favicon.png', 'https://api.lolimi.cn/', '桑帛云API,简单、易用、免费。提供多种实用接口,助力开发者高效工作。欢迎体验,探索无限可能,快速的免费API数据接口服务,服务器采用国内,稳定运行,官方交流群：516666275', 'active', 45, '2024-09-09 09:32:55.914', '2024-09-09 09:33:29.976', -8, '#000000');
 INSERT INTO `applications` VALUES (215, '网易云课堂', 'tabler:book', 'https://study.163.com/', '网易云课堂，一个专注于成人终身学习的在线教育平台。立足于实用性的要求, 与优质的教育内容创作者一起，为您提供全面、有效的在线学习内容。', 'active', 49, '2024-09-19 14:12:26.928', '2024-09-19 14:30:46.510', 0, '#BF4444');
 INSERT INTO `applications` VALUES (216, 'Element', 'https://element.eleme.cn/favicon.ico', 'https://element.eleme.cn/', 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库', 'active', 67, '2024-09-19 14:45:45.113', '2024-09-19 14:46:31.640', 0, '#000000');
@@ -172,6 +172,8 @@ INSERT INTO `applications` VALUES (223, 'DWAI', 'https://dw.dwai.world/list/favi
 INSERT INTO `applications` VALUES (224, 'AMZ123亚马逊导航', 'tabler:layout-navbar-collapse', 'https://amz123.com', 'AMZ123亚马逊导航是一家致力于服务中国跨境电商从业者的综合平台，以让跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上AMZ123。', 'active', 44, '2024-09-20 18:07:21.940', '2024-09-20 18:07:21.940', 0, '#29B1B5');
 INSERT INTO `applications` VALUES (225, '腾讯安全|威胁情报中心', 'https://tix.qq.com/favicon.ico', 'https://tix.qq.com/', '第一手威胁情报,小程序一手掌握 情报动态 当前有效安全情报。', 'active', 43, '2024-09-23 15:45:24.855', '2024-09-23 15:46:37.737', 0, '#000000');
 INSERT INTO `applications` VALUES (226, '程序员开发工具大全', 'fluent:window-dev-tools-16-filled', 'https://tool.ip138.com/', '程序员开发工具提供众多程序开发过程中需要用到的在线工具，有JSON格式化、 Javascript格式化、CSS格式化、URL编码、时间戳转换、正则表达式等各种在线工具。', 'active', 45, '2024-09-23 17:11:42.237', '2024-09-23 17:11:42.237', 0, '#159235');
+INSERT INTO `applications` VALUES (227, 'Ingress-Nginx Controller', 'https://kubernetes.github.io/ingress-nginx/assets/images/favicon.png', 'https://kubernetes.github.io/ingress-nginx/', 'This is the documentation for the Ingress NGINX Controller.', 'active', 54, '2024-09-25 15:05:17.746', '2024-09-25 15:07:49.518', 0, '#000000');
+INSERT INTO `applications` VALUES (228, 'kubeasz', 'eos-icons:kubelet-outlined', 'https://github.com/easzlab/kubeasz', '使用Ansible脚本安装K8S集群，介绍组件交互原理，方便直接，不受国内网络环境影响. Contribute to easzlab/kubeasz development by creating an account on GitHub.', 'active', 54, '2024-09-25 15:06:37.845', '2024-09-25 15:06:37.845', 0, '#0CA5BC');
 
 -- ----------------------------
 -- Table structure for menus
@@ -251,7 +253,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3MTYzODQ0fQ.Pm87g6XZXhkt39tTD7fRNKBh6cMbrHTaZc1CIivbrns', '2024-09-11 14:40:42.069', '2024-09-23 15:44:04.343', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3MzM0Mjc1fQ.MNJS9flka2M8DrRLVexdHyLExmnq-PBuuWYv-VrCwes', '2024-09-11 14:40:42.069', '2024-09-25 15:04:35.951', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
