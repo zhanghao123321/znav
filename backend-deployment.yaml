@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: znav-backend
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: znav-backend
+  template:
+    metadata:
+      labels:
+        app: znav-backend
+    spec:
+      containers:
+        - name: znav-backend
+          image: registry.cn-shanghai.aliyuncs.com/hooz/nav:backend  # 替换为你的后端镜像
+          env:
+            - name: DB_USER
+              value: "root"
+            - name: DB_PASSWORD
+              value: "123456"
+            - name: DB_HOST
+              value: "znav-mysql"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "znav"
+            - name: JWT_SECRET
+              value: "supersecret"
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: znav-backend
+  namespace: production
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: znav-backend

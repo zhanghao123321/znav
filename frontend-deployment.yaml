@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: znav-frontend
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: znav-frontend
+  template:
+    metadata:
+      labels:
+        app: znav-frontend
+    spec:
+      containers:
+        - name: znav-frontend
+          image: registry.cn-shanghai.aliyuncs.com/hooz/nav:frontend
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: znav-frontend
+  namespace: production
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: znav-frontend

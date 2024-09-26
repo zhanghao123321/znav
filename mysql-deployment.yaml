@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: znav-mysql
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: znav-mysql
+  template:
+    metadata:
+      labels:
+        app: znav-mysql
+    spec:
+      containers:
+        - name: znav-mysql
+          image: dockerpull.com/mysql:8.4.0-oraclelinux8
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "123456"
+            - name: MYSQL_DATABASE
+              value: "znav"
+            - name: TZ
+              value: "Asia/Shanghai"
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - mountPath: /docker-entrypoint-initdb.d
+              name: mysql-initdb
+      volumes:
+        - name: mysql-initdb
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: znav-mysql
+  namespace: production
+spec:
+  ports:
+    - port: 3306
+      targetPort: 3306
+  selector:
+    app: znav-mysql
