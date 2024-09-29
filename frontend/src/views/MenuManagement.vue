@@ -104,21 +104,25 @@
                   <el-icon>
                     <template v-if="scope.row.expanded">
                       <!-- 展开时显示自定义的向下箭头 -->
-                      <icon
-                          :icon="'mingcute:down-line'"
-                          width="14"
-                          height="14"
-                          color="black"
-                      />
+                      <div style="margin-right: 20px;">
+                        <icon
+                            :icon="'mingcute:down-line'"
+                            width="14"
+                            height="14"
+                            color="black"
+                        />
+                      </div>
                     </template>
                     <template v-else>
                       <!-- 收起时显示自定义的向右箭头 -->
+                      <div style="margin-right: 20px;">
                       <icon
                           :icon="'mingcute:right-line'"
                           width="14"
                           height="14"
                           color="black"
                       />
+                      </div>
                     </template>
                   </el-icon>
                 </el-button>

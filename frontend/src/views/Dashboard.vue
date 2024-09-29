@@ -42,10 +42,10 @@
               <el-table-column label="图标" width="100" align="center" show-overflow-tooltip>
                 <template #default="scope">
                   <template v-if="isUrl(scope.row.icon)">
-                    <img :src="scope.row.icon" alt="自定义图标" width="30" height="30" class="app-icon" />
+                    <img :src="scope.row.icon" alt="自定义图标" width="25" height="25" />
                   </template>
                   <template v-else>
-                    <icon :icon="scope.row.icon" :color="scope.row.icon_color || '#000'" width="30" height="30" />
+                    <icon :icon="scope.row.icon" :color="scope.row.icon_color || '#000'" width="25" height="25" />
                   </template>
                 </template>
               </el-table-column>
@@ -54,10 +54,10 @@
                 <template #default="scope">
                   <div v-if="scope && scope.row" style="display: flex; align-items: center; padding-left: 20px;">
                     <template v-if="isUrl(getMenuIcon(scope.row.menu_id))">
-                      <img :src="getMenuIcon(scope.row.menu_id)" :style="{ color: getMenuIconColor(scope.row.menu_id) || '#000' }" class="menu-icon" alt="菜单图标" style="margin-right: 8px;" />
+                      <img :src="getMenuIcon(scope.row.menu_id)" :style="{ color: getMenuIconColor(scope.row.menu_id) || '#000' }" width="25" height="25" style="margin-right: 8px;" />
                     </template>
                     <template v-else>
-                      <icon :icon="getMenuIcon(scope.row.menu_id)" :color="getMenuIconColor(scope.row.menu_id) || '#000'" width="20" height="20" style="margin-right: 8px;" />
+                      <icon :icon="getMenuIcon(scope.row.menu_id)" :color="getMenuIconColor(scope.row.menu_id) || '#000'" width="25" height="25" style="margin-right: 8px;" />
                     </template>
                     <span>{{ getMenuTitle(scope.row.menu_id) }}</span>
                   </div>
@@ -208,7 +208,11 @@ export default {
         axios.get(`${process.env.VUE_APP_API_URL}/applications/recent`, {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        axios.get(`${process.env.VUE_APP_API_URL}/menus`, { // 获取所有菜单
+        // 获取所有菜单，确保没有分页限制，使用足够大的 pageSize
+        axios.get(`${process.env.VUE_APP_API_URL}/menus`, {
+          params: {
+            pageSize: 1000, // 获取所有菜单数据，假设 1000 足够大
+          },
           headers: { Authorization: `Bearer ${token}` }
         })
       ]).then(axios.spread((usersResponse, applicationsResponse, menusResponse, recentApplicationsResponse, allMenusResponse) => {
@@ -216,7 +220,7 @@ export default {
         this.totalApplications = applicationsResponse.data.total;
         this.totalMenus = menusResponse.data.total;
         this.recentApplications = recentApplicationsResponse.data.applications;
-        this.menus = allMenusResponse.data.menus; // 获取菜单数据
+        this.menus = allMenusResponse.data.menus; // 获取所有菜单
 
         // 计算百分比
         this.applicationsPercentage = this.calculatePercentage(this.totalApplications);
