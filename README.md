@@ -3,7 +3,11 @@
 ```shell
 git clone https://github.com/zhanghao123321/znav.git
 cd znav
-docker-compose up -d --build
+### 已构建后镜像运行
+docker-compose -f docker-compose.image.yml up -d
+
+### 重新构建镜像运行
+docker-compose -f docker-compose.build.yml up --build -d
 ```
 
 ## K8S部署
