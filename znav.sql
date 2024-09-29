@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 25/09/2024 15:13:13
+ Date: 29/09/2024 11:38:25
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 229 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 231 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -174,6 +174,8 @@ INSERT INTO `applications` VALUES (225, '腾讯安全|威胁情报中心', 'http
 INSERT INTO `applications` VALUES (226, '程序员开发工具大全', 'fluent:window-dev-tools-16-filled', 'https://tool.ip138.com/', '程序员开发工具提供众多程序开发过程中需要用到的在线工具，有JSON格式化、 Javascript格式化、CSS格式化、URL编码、时间戳转换、正则表达式等各种在线工具。', 'active', 45, '2024-09-23 17:11:42.237', '2024-09-23 17:11:42.237', 0, '#159235');
 INSERT INTO `applications` VALUES (227, 'Ingress-Nginx Controller', 'https://kubernetes.github.io/ingress-nginx/assets/images/favicon.png', 'https://kubernetes.github.io/ingress-nginx/', 'This is the documentation for the Ingress NGINX Controller.', 'active', 54, '2024-09-25 15:05:17.746', '2024-09-25 15:07:49.518', 0, '#000000');
 INSERT INTO `applications` VALUES (228, 'kubeasz', 'eos-icons:kubelet-outlined', 'https://github.com/easzlab/kubeasz', '使用Ansible脚本安装K8S集群，介绍组件交互原理，方便直接，不受国内网络环境影响. Contribute to easzlab/kubeasz development by creating an account on GitHub.', 'active', 54, '2024-09-25 15:06:37.845', '2024-09-25 15:06:37.845', 0, '#0CA5BC');
+INSERT INTO `applications` VALUES (229, 'Light2f', 'https://light2f.com/favicon.png', 'https://light2f.com/#/home', '前端中后台低代码（lowcode）可视化开发平台', 'active', 68, '2024-09-27 10:46:47.787', '2024-09-27 10:46:47.787', 0, '#000000');
+INSERT INTO `applications` VALUES (230, 'Light2f', 'https://light2f.com/favicon.png', 'https://light2f.com/#/home', '前端中后台低代码（lowcode）可视化开发平台', 'active', 68, '2024-09-27 10:46:57.458', '2024-09-27 10:46:57.458', 0, '#000000');
 
 -- ----------------------------
 -- Table structure for menus
@@ -253,7 +255,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3MzM0Mjc1fQ.MNJS9flka2M8DrRLVexdHyLExmnq-PBuuWYv-VrCwes', '2024-09-11 14:40:42.069', '2024-09-25 15:04:35.951', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3NDkxNTY1fQ.myVB1xvOJiPtq_qsEAcbjNQzS2SGh1b4JBVEOuMScag', '2024-09-11 14:40:42.069', '2024-09-27 10:46:05.480', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

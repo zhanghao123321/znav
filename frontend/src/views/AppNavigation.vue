@@ -1181,14 +1181,6 @@ body {
   transform: translateY(-10px);
 }
 
-.footer-container {
-  background-color: #ffffff;
-  color: #333333;
-  text-align: left;
-  margin-left: 12%;
-  border-top: 1px solid #ebeef5;
-}
-
 .icp {
   text-decoration: underline;
 }
@@ -1465,13 +1457,19 @@ body {
   background-color: #001529; /* 其他名次的背景颜色（黑色） */
 }
 
+.footer-container {
+  background-color: #ffffff;
+  color: #333333;
+  text-align: left;
+  position: relative; /* 改为相对定位 */
+  width: calc(100% - 200px); /* 计算宽度以适应页面 */
+  margin-left: 200px; /* 与左侧边栏对齐 */
+  border-top: 1px solid #ebeef5;
+  box-sizing: border-box; /* 包括内边距在内 */
+  margin-top: 0;
+}
+
 .el-footer {
-  --el-footer-padding: 0 20px;
-  --el-footer-height: 60px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  height: var(--el-footer-height);
-  padding: var(--el-footer-padding);
-  margin-left: 14.5%;
+  --el-footer-height: 30px !important;
 }
 </style>
