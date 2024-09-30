@@ -4,12 +4,14 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/hooz/nav:backend
     container_name: znav-backend
     environment:
-      - DB_USER=root
-      - DB_PASSWORD=123456
-      - DB_HOST=mysql  # 修改为 MySQL 容器的名称
-      - DB_PORT=3306
-      - DB_NAME=znav
+      - DB_USER=root       # 数据库用户
+      - DB_PASSWORD=123456 # 数据库密码
+      - DB_HOST=mysql  # 数据库容器
+      - DB_PORT=3306   # 数据库端口
+      - DB_NAME=znav   # zanv数据库
       - JWT_SECRET=supersecret
+      - IMAGE_HOST_URL=http://lsky-pro/api/v1/upload                       # 添加图床地址
+      - IMAGE_HOST_TOKEN=2|5btba5SCgSxjGiZMyhzFrFfKZZDYsp1lLWE4Vb1t        # 添加图床 Token，需要替换为实际值
     ports:
       - "8080:8080"  # 暴露后端的 8080 端口
     networks:
@@ -30,16 +32,16 @@ services:
     restart: always
 
   mysql:
-    image: mysql:8.4.0-oraclelinux8
+    image: mysql:8.0
     container_name: znav-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=znav  # 自动创建数据库
       - TZ=Asia/Shanghai
     ports:
       - "3306:3306"  # 暴露 MySQL 的端口
     volumes:
-      - ./znav.sql:/docker-entrypoint-initdb.d/znav.sql  # 启动时自动导入 znav.sql
+      - ./lsky.sql:/docker-entrypoint-initdb.d/lsky.sql  # 初始化 lsky 数据库
+      - ./znav.sql:/docker-entrypoint-initdb.d/znav.sql  # 初始化 znav 数据库
     networks:
       - znav_network
     healthcheck:
@@ -47,6 +49,24 @@ services:
       interval: 10s
       retries: 3
     restart: always
+
+  lsky-pro:
+    container_name: lsky-pro
+    image: dko0/lsky-pro
+    restart: always
+    volumes:
+      - /data/lsky:/var/www/html  # 映射到本地
+    ports:
+      - "12345:80"  # 左侧换成你的空闲端口号，映射到宿主机
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_DATABASE=lsky
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=123456
+    networks:
+      - znav_network
+    depends_on:
+      - mysql  # 等待 MySQL 启动
 
 networks:
   znav_network:
