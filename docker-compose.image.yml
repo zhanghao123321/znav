@@ -32,10 +32,12 @@ services:
     restart: always
 
   mysql:
-    image: mysql:8.0
+    image: mysql:8.4.0-oraclelinux8
     container_name: znav-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=znav
+      - MYSQL_DATABASE=lsky
       - TZ=Asia/Shanghai
     ports:
       - "3306:3306"  # 暴露 MySQL 的端口
@@ -67,6 +69,7 @@ services:
       - znav_network
     depends_on:
       - mysql  # 等待 MySQL 启动
+    restart: always
 
 networks:
   znav_network:
