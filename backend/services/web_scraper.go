@@ -12,9 +12,9 @@ import (
 )
 
 type ScrapedData struct {
-	Title       string
-	LogoLink    string
-	Description string
+	Title       string `json:"title"`
+	LogoLink    string `json:"logo_link"`
+	Description string `json:"description"`
 }
 
 func ScrapeWebsite(websiteURL string) (*ScrapedData, error) {

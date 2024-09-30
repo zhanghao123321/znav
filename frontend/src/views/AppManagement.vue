@@ -295,7 +295,7 @@
           </el-col>
           <el-col :span="24">
             <el-form-item label=" ">
-              <el-button type="primary" @click="fetchWebsiteData">
+              <el-button type="primary" @click="fetchWebsiteData" :loading="isFetching">
                 采集
               </el-button>
             </el-form-item>
@@ -312,10 +312,10 @@
 
           <!-- 图标输入和预览 -->
           <el-col :span="24">
-            <el-form-item label="图标">
+            <el-form-item label="图标" >
               <el-row :gutter="5">
                 <!-- 图标输入框 -->
-                <el-col :span="20">
+                <el-col :span="18">
                   <el-input
                       v-model="app.icon"
                       placeholder="请输入iconify图标或URL"
@@ -323,8 +323,41 @@
                       class="icon-input"
                   />
                 </el-col>
+                <!-- 同步图床按钮 -->
+                <el-col :span="2">
+                  <el-tooltip content="同步图标到图床" placement="top">
+                    <el-button
+                        @click="syncIconToImageHost"
+                        :disabled="!isUrl(app.icon) || isSyncingIcon"
+                        type="text"
+                    >
+                      <template v-if="isSyncingIcon">
+                        <div style="margin-left: -13px; margin-top: 5px;">
+                          <icon
+                              icon="eos-icons:loading"
+                              spin
+                              width="40"
+                              height="40"
+                              color="#00bfff"
+                          />
+                        </div>
+                      </template>
+                      <template v-else>
+                        <div style="margin-left: -13px; margin-top: 5px;">
+                          <icon
+                              icon="fluent:arrow-sync-circle-16-regular"
+                              width="40"
+                              height="40"
+                              color="#00bfff"
+                          />
+                        </div>
+                      </template>
+                    </el-button>
+                  </el-tooltip>
+                </el-col>
                 <!-- 图标预览 -->
-                <el-col :span="2" class="ch-padding">
+                <el-col :span="2">
+                  <div style="margin-top: 1.8px;" >
                   <!-- 判断是否为 URL -->
                   <template v-if="isUrl(app.icon)">
                     <img
@@ -332,7 +365,7 @@
                         :style="{ color: app.icon_color || '#000' }"
                         width="30"
                         height="30"
-                    />
+                        alt="图标"/>
                   </template>
                   <!-- 如果不是 URL，则使用 Iconify 图标 -->
                   <template v-else>
@@ -343,10 +376,13 @@
                         height="30"
                     />
                   </template>
+                  </div>
                 </el-col>
                 <!-- 颜色选择器 -->
                 <el-col :span="2">
+                  <div style="margin-left: -3px; margin-top: 1px;" >
                   <el-color-picker v-model="app.icon_color" />
+                  </div>
                 </el-col>
               </el-row>
               <el-col :span="24">
@@ -458,6 +494,8 @@ export default {
       showForm: false,
       isEditing: false,
       originalApp: {},
+      isFetching: false,
+      isSyncingIcon: false, // 同步图标的加载状态
       app: {
         title: '',
         icon: '', // 这里将存储用户从 Iconify 中选择的图标名称或URL
@@ -754,6 +792,13 @@ export default {
         return;
       }
 
+      // 检查链接是否有效
+      if (!this.isUrl(this.app.link)) {
+        this.$message.error('请输入有效的URL，如：https://www.baidu.com');
+        return;
+      }
+
+      this.isFetching = true; // 开始加载
       try {
         const response = await axios.get(
             `${process.env.VUE_APP_API_URL}/scrape-website`,
@@ -764,21 +809,65 @@ export default {
         );
 
         const data = response.data;
-        console.log('Fetched data:', data);
 
-        // 直接赋值
-        this.app.title = data.Title || ''; // 注意大小写
-        this.app.icon = data.LogoLink || ''; // 注意大小写
-        this.app.description = data.Description || ''; // 注意大小写
+        this.app.title = data.title || '';
+        this.app.icon = data.logo_link || '';
+        this.app.description = data.description || '';
+
+        // 确保图标颜色有默认值
+        this.app.icon_color = this.app.icon_color || '#000000';
 
         this.$message.success('采集成功，表单已自动填充');
       } catch (error) {
         console.error('Error fetching website data:', error);
-        this.$message.error('采集失败，请检查链接或稍后再试');
+        if (error.response) {
+          switch (error.response.status) {
+            case 400:
+              this.$message.error('请求参数错误，请检查输入的链接');
+              break;
+            case 500:
+              this.$message.error('服务器内部错误，请稍后再试');
+              break;
+            default:
+              this.$message.error('采集失败，请稍后再试');
+          }
+        } else if (error.request) {
+          this.$message.error('网络错误，请检查您的网络连接');
+        } else {
+          this.$message.error('发生错误：' + error.message);
+        }
+      } finally {
+        this.isFetching = false; // 请求结束，重置加载状态
+      }
+    },
+    async syncIconToImageHost() {
+      if (!this.isUrl(this.app.icon)) {
+        this.$message.error('当前图标不是有效的 URL，无法同步到图床');
+        return;
+      }
+
+      this.isSyncingIcon = true;
+      try {
+        const response = await axios.post(
+            `${process.env.VUE_APP_API_URL}/sync-icon`,
+            { icon_url: this.app.icon },
+            {
+              headers: { Authorization: `Bearer ${this.$store.state.token}` },
+            }
+        );
+
+        const data = response.data;
+        this.app.icon = data.icon_url || '';
+        this.$message.success('图标已成功同步图床');
+      } catch (error) {
+        console.error('Error syncing icon to image host:', error);
+        this.$message.error('同步图标失败，请稍后再试');
+      } finally {
+        this.isSyncingIcon = false;
       }
     },
   },
-};
+}
 </script>
 
 <style>
@@ -1020,10 +1109,5 @@ export default {
 
 .el-color-picker__trigger{
   margin-right: 500px;
-}
-
-.ch-padding {
-  padding-left: 10px !important;
-  padding-right: 3px !important;
 }
 </style>

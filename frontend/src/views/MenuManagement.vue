@@ -281,7 +281,7 @@
           <el-form-item label="图标">
             <el-row :gutter="5">
               <!-- 图标输入框 -->
-              <el-col :span="20">
+              <el-col :span="18">
                 <el-input
                     v-model="menu.icon"
                     placeholder="请输入iconify图标或URL"
