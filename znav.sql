@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 29/09/2024 16:03:38
+ Date: 30/09/2024 17:44:47
 */
 
 SET NAMES utf8mb4;
@@ -255,7 +255,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3Njc5MzU5fQ.W9DON7E2DryxUN9BGH8Yg2-haZCpFtl2u3bGouDRbJE', '2024-09-11 14:40:42.069', '2024-09-29 14:55:59.933', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3NzY3ODc1fQ.h9Mxu3i2fCkZvjBx4jZXBDDxeHEbHY4Tz5qoWi7Gmks', '2024-09-11 14:40:42.069', '2024-09-30 15:31:15.906', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

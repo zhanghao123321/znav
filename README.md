@@ -5,6 +5,7 @@ git clone https://github.com/zhanghao123321/znav.git
 cd znav
 ### 修改docker-compose.image.yml文件
 vim docker-compose.image.yml
+
 ### 已构建后镜像运行
 docker-compose -f docker-compose.image.yml up -d
 
