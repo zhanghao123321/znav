@@ -7,10 +7,11 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"znav/backend/database"
+	"znav/backend/models"
 )
 
 func SyncIconHandler(c *gin.Context) {
@@ -28,6 +29,20 @@ func SyncIconHandler(c *gin.Context) {
 		return
 	}
 
+	db := database.GetDB()
+
+	// 使用固定的 ID 获取设置
+	var settings models.SiteSettings
+	if err := db.First(&settings, 1).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "图床配置未设置，请先在网站设置中配置"})
+		return
+	}
+
+	if settings.ImageHostUrl == "" || settings.ImageHostToken == "" {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "图床地址或 Token 未配置，请在网站设置中填写"})
+		return
+	}
+
 	// 下载图标
 	iconData, err := downloadImage(requestData.IconURL)
 	if err != nil {
@@ -36,7 +51,7 @@ func SyncIconHandler(c *gin.Context) {
 	}
 
 	// 上传图标到图床
-	uploadedURL, err := uploadImage(iconData)
+	uploadedURL, err := uploadImage(iconData, settings.ImageHostUrl, settings.ImageHostToken)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("Failed to upload icon: %v", err)})
 		return
@@ -75,10 +90,7 @@ func downloadImage(imageURL string) ([]byte, error) {
 	return imageData, nil
 }
 
-func uploadImage(imageData []byte) (string, error) {
-	uploadURL := os.Getenv("IMAGE_HOST_URL")
-	token := os.Getenv("IMAGE_HOST_TOKEN")
-
+func uploadImage(imageData []byte, uploadURL string, token string) (string, error) {
 	if uploadURL == "" || token == "" {
 		return "", fmt.Errorf("图床地址或 Token 未配置")
 	}

@@ -8,10 +8,14 @@ export default createStore({
             username: '',
         },
         siteSettings: {
+            id: null,
             title: '',
             icon: '',
+            icon_color: '',
             footerInfo: '',
-            recordNumber: ''
+            recordNumber: '',
+            image_host_url: '',
+            image_host_token: ''
         },
     },
     mutations: {

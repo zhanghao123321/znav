@@ -41,7 +41,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./znav.sql:/docker-entrypoint-initdb.d/znav.sql 
+      - ./initdb:/docker-entrypoint-initdb.d
     networks:
       - znav_network
     healthcheck:

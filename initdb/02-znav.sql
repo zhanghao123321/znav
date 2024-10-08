@@ -1,17 +1,17 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : 124.70.135.41
+ Source Server         : 192.168.222.173
  Source Server Type    : MySQL
  Source Server Version : 80400 (8.4.0)
- Source Host           : 124.70.135.41:3306
+ Source Host           : 192.168.222.173:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 30/09/2024 17:44:47
+ Date: 08/10/2024 16:21:11
 */
 
 SET NAMES utf8mb4;
@@ -225,13 +225,15 @@ CREATE TABLE `site_settings`  (
   `created_at` datetime(3) NULL DEFAULT NULL,
   `updated_at` datetime(3) NULL DEFAULT NULL,
   `icon_color` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+  `image_host_url` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+  `image_host_token` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of site_settings
 -- ----------------------------
-INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-09-05 06:11:10.726', '2024-09-19 13:14:44.481', '#030303');
+INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-08 16:18:25.860', '', 'http://192.168.222.173:12345', '4|0RNALhyfVzEdNkmhavZd6GowXyMX3OzptmMkDciE');
 
 -- ----------------------------
 -- Table structure for users
@@ -255,7 +257,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI3NzY3ODc1fQ.h9Mxu3i2fCkZvjBx4jZXBDDxeHEbHY4Tz5qoWi7Gmks', '2024-09-11 14:40:42.069', '2024-09-30 15:31:15.906', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4NDUyNDEyfQ.dnkswIXglsmuyhZzQeyR_6tsoWP2yJ4s73hh1ms5UNU', '2024-09-11 14:40:42.069', '2024-10-08 13:40:12.358', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

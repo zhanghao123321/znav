@@ -861,7 +861,12 @@ export default {
         this.$message.success('图标已成功同步图床');
       } catch (error) {
         console.error('Error syncing icon to image host:', error);
-        this.$message.error('同步图标失败，请稍后再试');
+        // 显示后端返回的错误信息
+        if (error.response && error.response.data && error.response.data.error) {
+          this.$message.error('同步图标失败：' + error.response.data.error);
+        } else {
+          this.$message.error('同步图标失败，请稍后再试');
+        }
       } finally {
         this.isSyncingIcon = false;
       }
