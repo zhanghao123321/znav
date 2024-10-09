@@ -90,16 +90,25 @@ func downloadImage(imageURL string) ([]byte, error) {
 	return imageData, nil
 }
 
-func uploadImage(imageData []byte, uploadURL string, token string) (string, error) {
-	if uploadURL == "" || token == "" {
+func uploadImage(imageData []byte, baseURL string, token string) (string, error) {
+	if baseURL == "" || token == "" {
 		return "", fmt.Errorf("图床地址或 Token 未配置")
 	}
+
+	// 构建上传接口的完整 URL
+	uploadURL := fmt.Sprintf("%s/api/v1/upload", baseURL)
 
 	// 创建一个缓冲区用于存储 multipart/form-data 数据
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
 
-	// 创建文件字段
+	// 添加 Token 字段（如果需要在表单中传递）
+	err := writer.WriteField("token", token)
+	if err != nil {
+		return "", fmt.Errorf("添加 Token 字段失败: %w", err)
+	}
+
+	// 创建文件字段，假设字段名为 "file"
 	part, err := writer.CreateFormFile("file", "icon.png")
 	if err != nil {
 		return "", fmt.Errorf("创建文件字段失败: %w", err)
@@ -125,7 +134,13 @@ func uploadImage(imageData []byte, uploadURL string, token string) (string, erro
 
 	// 设置请求头
 	req.Header.Set("Content-Type", writer.FormDataContentType())
+	// 如果 Token 需要在请求头中传递
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
+
+	// 打印请求信息（调试用）
+	// fmt.Printf("请求 URL: %s\n", uploadURL)
+	// fmt.Printf("请求头部: %v\n", req.Header)
+	// fmt.Printf("请求 Body: %s\n", body.String())
 
 	// 发送请求
 	client := &http.Client{
@@ -137,9 +152,18 @@ func uploadImage(imageData []byte, uploadURL string, token string) (string, erro
 	}
 	defer resp.Body.Close()
 
+	// 读取响应体
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", fmt.Errorf("读取响应体失败: %w", err)
+	}
+
+	// 打印响应信息（调试用）
+	// fmt.Printf("响应状态码: %d\n", resp.StatusCode)
+	// fmt.Printf("响应 Body: %s\n", string(respBody))
+
+	// 检查响应状态码
 	if resp.StatusCode != http.StatusOK {
-		// 读取响应体，获取错误信息
-		respBody, _ := io.ReadAll(resp.Body)
 		return "", fmt.Errorf("上传失败，状态码: %d，响应: %s", resp.StatusCode, string(respBody))
 	}
 
@@ -154,7 +178,7 @@ func uploadImage(imageData []byte, uploadURL string, token string) (string, erro
 		} `json:"data"`
 	}
 
-	err = json.NewDecoder(resp.Body).Decode(&result)
+	err = json.Unmarshal(respBody, &result)
 	if err != nil {
 		return "", fmt.Errorf("解析上传响应失败: %w", err)
 	}
