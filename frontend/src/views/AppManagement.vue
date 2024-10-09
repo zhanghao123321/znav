@@ -358,30 +358,30 @@
                 <!-- 图标预览 -->
                 <el-col :span="2">
                   <div style="margin-top: 1.8px;" >
-                  <!-- 判断是否为 URL -->
-                  <template v-if="isUrl(app.icon)">
-                    <img
-                        :src="app.icon"
-                        :style="{ color: app.icon_color || '#000' }"
-                        width="30"
-                        height="30"
-                        alt="图标"/>
-                  </template>
-                  <!-- 如果不是 URL，则使用 Iconify 图标 -->
-                  <template v-else>
-                    <icon
-                        :icon="app.icon"
-                        :color="app.icon_color || '#000'"
-                        width="30"
-                        height="30"
-                    />
-                  </template>
+                    <!-- 判断是否为 URL -->
+                    <template v-if="isUrl(app.icon)">
+                      <img
+                          :src="app.icon"
+                          :style="{ color: app.icon_color || '#000' }"
+                          width="30"
+                          height="30"
+                          alt="图标"/>
+                    </template>
+                    <!-- 如果不是 URL，则使用 Iconify 图标 -->
+                    <template v-else>
+                      <icon
+                          :icon="app.icon"
+                          :color="app.icon_color || '#000'"
+                          width="30"
+                          height="30"
+                      />
+                    </template>
                   </div>
                 </el-col>
                 <!-- 颜色选择器 -->
                 <el-col :span="2">
                   <div style="margin-left: -3px; margin-top: 1px;" >
-                  <el-color-picker v-model="app.icon_color" />
+                    <el-color-picker v-model="app.icon_color" />
                   </div>
                 </el-col>
               </el-row>
@@ -858,7 +858,7 @@ export default {
 
         const data = response.data;
         this.app.icon = data.icon_url || '';
-        this.$message.success('图标已成功同步图床');
+        this.$message.success('图标已成功同步到图床');
       } catch (error) {
         console.error('Error syncing icon to image host:', error);
         // 显示后端返回的错误信息

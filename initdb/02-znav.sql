@@ -233,7 +233,7 @@ CREATE TABLE `site_settings`  (
 -- ----------------------------
 -- Records of site_settings
 -- ----------------------------
-INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-08 16:18:25.860', '', 'http://192.168.222.173:12345', '4|0RNALhyfVzEdNkmhavZd6GowXyMX3OzptmMkDciE');
+INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-08 16:18:25.860', '', 'http://lsky-pro', '4|0RNALhyfVzEdNkmhavZd6GowXyMX3OzptmMkDciE');
 
 -- ----------------------------
 -- Table structure for users

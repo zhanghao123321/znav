@@ -102,13 +102,7 @@ func uploadImage(imageData []byte, baseURL string, token string) (string, error)
 	var body bytes.Buffer
 	writer := multipart.NewWriter(&body)
 
-	// 添加 Token 字段（如果需要在表单中传递）
-	err := writer.WriteField("token", token)
-	if err != nil {
-		return "", fmt.Errorf("添加 Token 字段失败: %w", err)
-	}
-
-	// 创建文件字段，假设字段名为 "file"
+	// 创建文件字段，字段名为 "file"
 	part, err := writer.CreateFormFile("file", "icon.png")
 	if err != nil {
 		return "", fmt.Errorf("创建文件字段失败: %w", err)
@@ -134,13 +128,12 @@ func uploadImage(imageData []byte, baseURL string, token string) (string, error)
 
 	// 设置请求头
 	req.Header.Set("Content-Type", writer.FormDataContentType())
-	// 如果 Token 需要在请求头中传递
+	// 设置 Authorization 头部
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
 
-	// 打印请求信息（调试用）
+	// （可选）打印请求信息（调试用）
 	// fmt.Printf("请求 URL: %s\n", uploadURL)
 	// fmt.Printf("请求头部: %v\n", req.Header)
-	// fmt.Printf("请求 Body: %s\n", body.String())
 
 	// 发送请求
 	client := &http.Client{
@@ -158,7 +151,7 @@ func uploadImage(imageData []byte, baseURL string, token string) (string, error)
 		return "", fmt.Errorf("读取响应体失败: %w", err)
 	}
 
-	// 打印响应信息（调试用）
+	// （可选）打印响应信息（调试用）
 	// fmt.Printf("响应状态码: %d\n", resp.StatusCode)
 	// fmt.Printf("响应 Body: %s\n", string(respBody))
 

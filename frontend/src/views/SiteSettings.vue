@@ -183,8 +183,12 @@ export default {
       return string.startsWith('http://') || string.startsWith('https://');
     },
     saveSettings() {
-      // 在保存设置时，将 image_host_url 也一起发送到后端
-      this.$store.dispatch('updateSiteSettings', this.settings)
+      // 创建一个新的对象，排除 image_host_url
+      const settingsToSave = { ...this.settings };
+      delete settingsToSave.image_host_url; // 不保存 image_host_url
+
+      this.$store
+          .dispatch('updateSiteSettings', settingsToSave)
           .then(() => {
             this.$message.success('设置已保存');
           })
@@ -200,10 +204,6 @@ export default {
       this.tokenDialogVisible = true;
     },
     fetchToken() {
-      if (!this.isUrl(this.tokenForm.url)) {
-        this.$message.error('请输入有效的 URL');
-        return;
-      }
       if (!this.tokenForm.email || !this.tokenForm.password) {
         this.$message.error('请填写所有必填项');
         return;
@@ -216,23 +216,32 @@ export default {
       formData.append('email', this.tokenForm.email);
       formData.append('password', this.tokenForm.password);
 
-      // 发送请求获取 Token
-      axios.post(`${this.tokenForm.url}/api/v1/tokens`, formData)
-          .then(response => {
-            if (response.data && response.data.data && response.data.data.token) {
-              // 将获取到的 Token 和 URL 填入到设置中
+      // 发送请求获取 Token，使用相对路径
+      axios
+          .post(`/lsky-pro/api/v1/tokens`, formData)
+          .then((response) => {
+            if (
+                response.data &&
+                response.data.data &&
+                response.data.data.token
+            ) {
+              // 将获取到的 Token 填入到设置中
               this.settings.image_host_token = response.data.data.token;
-              this.settings.image_host_url = this.tokenForm.url; // 保存 URL 到设置中
+              // **不要修改 `this.settings.image_host_url`**
               this.$message.success('Token 获取成功');
               this.tokenDialogVisible = false;
             } else {
               this.$message.error('未能获取到 Token，请检查输入的信息是否正确');
             }
           })
-          .catch(error => {
+          .catch((error) => {
             console.error('Error fetching token:', error);
             let errorMessage = error.message;
-            if (error.response && error.response.data && error.response.data.message) {
+            if (
+                error.response &&
+                error.response.data &&
+                error.response.data.message
+            ) {
               errorMessage = error.response.data.message;
             }
             this.$message.error('获取 Token 失败：' + errorMessage);
@@ -240,7 +249,7 @@ export default {
           .finally(() => {
             this.fetchingToken = false; // 加载结束
           });
-    }
+    },
   }
 };
 </script>
