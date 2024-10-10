@@ -1,17 +1,17 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : 192.168.222.173
+ Source Server         : 124.70.135.41
  Source Server Type    : MySQL
  Source Server Version : 80400 (8.4.0)
- Source Host           : 192.168.222.173:3306
+ Source Host           : 124.70.135.41:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 10/10/2024 16:43:52
+ Date: 10/10/2024 17:04:39
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ INSERT INTO `applications` VALUES (64, 'ChatGPT', 'https://pic2.ziyuan.wang/user
 INSERT INTO `applications` VALUES (65, 'New API', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_2d18f2b7e080c.png', 'https://zh.hooz.fun/', 'OpenAI 接口聚合管理，支持多种渠道包括 Azure，可用于二次分发管理 key，仅单可执行文件，已打包好 Docker 镜像，一键部署，开箱即用', 'active', 42, '2024-09-02 09:02:48.686', '2024-10-10 16:15:03.945', -9, '#000000');
 INSERT INTO `applications` VALUES (66, 'Claude', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_40ed4d522ab67.png', 'https://claude.ai/', 'Claude，美国人工智能初创公司Anthropic发布的大型语言模型家族', 'active', 44, '2024-09-02 09:02:48.686', '2024-10-10 16:08:19.082', 0, '#000000');
 INSERT INTO `applications` VALUES (67, 'Kimi', 'https://statics.moonshot.cn/kimi-chat/favicon.ico', 'https://kimi.moonshot.cn/', 'Kimi 是一个有着超大“内存”的智能助手，可以一口气读完二十万字的小说，还会上网冲浪，快来跟他聊聊吧 | Kimi.ai - Moonshot AI 出品的智能助手', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-04 03:33:37.155', 0, '#000000');
-INSERT INTO `applications` VALUES (68, 'ChatGLM', 'https://chatglm.cn/img/logo-collapse.d00ef130.svg', 'https://www.chatglm.cn/', 'ChatGLM是清华大学开发的,经过约1T标识符的中英双语训练,拥有62 亿参数的开源AI大语言模型,它能生成相当符合人类偏好的回答。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (68, 'ChatGLM', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_2b924106a083d.png', 'https://www.chatglm.cn/', 'ChatGLM是清华大学开发的,经过约1T标识符的中英双语训练,拥有62 亿参数的开源AI大语言模型,它能生成相当符合人类偏好的回答。', 'active', 44, '2024-09-02 09:02:48.686', '2024-10-10 17:03:05.709', 0, '#000000');
 INSERT INTO `applications` VALUES (69, '讯飞星火', 'https://xinghuo.xfyun.cn/spark-icon.ico', 'https://xinghuo.xfyun.cn/', '讯飞星火大模型，是由科大讯飞推出的新一代认知智能大模型，拥有跨领域的知识和语言理解能力，能够基于自然对话方式理解与执行任务，提供语言理解、知识问答、逻辑推理、数学题解答、代码理解与编写等多种能力。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (70, '文心一言', 'https://nlp-eb.cdn.bcebos.com/logo/favicon.ico', 'https://yiyan.baidu.com/', '文心一言（英文名：ERNIE Bot）是百度全新一代知识增强大语言模型，文心大模型家族的新成员，能够与人对话互动、回答问题、协助创作，高效便捷地帮助人们获取信息、知识和灵感。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (71, '小浣熊', 'https://raccoon-sta.sensetime.com/assets/web/logo.svg', 'https://raccoon.sensetime.com/', 'Raccoon - Another Comprehensive CO-pilOt Navigator ｜ Raccoon是基于商汤自研大语言模型的智能助手，包含代码助手、办公助手，满足用户代码编写、数据分析、编程学习等各类需求。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -96,7 +96,7 @@ INSERT INTO `applications` VALUES (113, 'Domain Admin', 'https://domain-admin.re
 INSERT INTO `applications` VALUES (114, 'Jpom项目运维', 'https://jpom.top/favicon.ico', 'https://jpom.top/', 'Jpom是一款简而轻的低侵入式在线构建、自动部署、日常运维、项目监控软件。', 'active', 46, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (115, 'Iconify Design', 'https://iconify.design/favicon.ico', 'https://iconify.design/', 'All popular icon sets, one framework', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-05 01:28:03.695', -10, '#000000');
 INSERT INTO `applications` VALUES (116, 'JumpServer', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_397ec3635eaca.png', 'https://www.fit2cloud.com/jumpserver/index.html', 'JumpServer 是广受欢迎的开源堡垒机，是符合 4A 规范的专业运维安全审计系统。', 'active', 46, '2024-09-02 09:02:48.686', '2024-10-10 16:41:10.713', 0, '#000000');
-INSERT INTO `applications` VALUES (117, 'AWVS漏洞扫描', 'http://www.acunetix.com/favicon.ico', 'http://www.acunetix.com/', 'AWVS（Acunetix Web Vulnerability Scanner）是一款用于检测和评估Web应用程序安全漏洞的强大工具。Docker是一个开源的应用容器引擎，可以轻松创建、部署和运行应用程序。本文将介绍如何使用Docker来安装AWVS。', 'active', 46, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (117, 'AWVS漏洞扫描', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_7cc1b7f6fd9bf.png', 'http://www.acunetix.com/', 'AWVS（Acunetix Web Vulnerability Scanner）是一款用于检测和评估Web应用程序安全漏洞的强大工具。Docker是一个开源的应用容器引擎，可以轻松创建、部署和运行应用程序。本文将介绍如何使用Docker来安装AWVS。', 'active', 46, '2024-09-02 09:02:48.686', '2024-10-10 16:59:19.791', 0, '#000000');
 INSERT INTO `applications` VALUES (118, '雷池', 'https://waf-ce.chaitin.cn/favicon.ico', 'https://waf-ce.chaitin.cn', '一款足够简单、好用、强大的免费WAF。基于业界领先的语义分析检测技术，保护你的网站不受黑客攻击。', 'active', 46, '2024-09-02 09:02:48.686', '2024-09-06 02:31:51.854', 0, '#000000');
 INSERT INTO `applications` VALUES (119, 'Teleport堡垒机', 'https://docs.tp4a.com/favicon.ico', 'https://docs.tp4a.com/', '一款简单易用的堡垒机', 'active', 46, '2024-09-02 09:02:48.686', '2024-10-10 16:40:58.367', 0, '#000000');
 INSERT INTO `applications` VALUES (120, 'httpsok-SSL证书管理', 'https://httpsok.com/favicon.ico', 'https://httpsok.com/doc/', 'httpsok官方文档 httpsok.com 免费SSL证书 SSL免费证书申请 nginx证书 https证书 免费证书 证书一键续签', 'active', 46, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -118,7 +118,7 @@ INSERT INTO `applications` VALUES (136, 'huggingface', 'mdi:face-outline', 'http
 INSERT INTO `applications` VALUES (137, '互连协议IP查询', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_631ef8eb143b8.png', 'https://www.cip.cc/', '查IP(www.cip.cc)网站, 提供免费的IP查询服务,命令行查询IP, 并且支持\'PC网站, 手机网站, 命令行(Windows/UNIX/Linux)\' 三大平台, 是个多平台的IP查询网站, 更新即使, 数据准确是我们的目标', 'active', 42, '2024-09-02 09:02:48.686', '2024-10-10 16:40:11.855', -8, '#000000');
 INSERT INTO `applications` VALUES (138, 'crontab时间计算', 'eos-icons:cronjob', 'https://tool.lu/crontab/', 'crontab执行时间计算', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-23 17:12:39.149', 0, '#0BCCD3');
 INSERT INTO `applications` VALUES (139, 'DeepL翻译', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_26d537c13d188.png', 'https://www.deepl.com/zh/translator', '即时翻译文本&完整的文档文件。为个人和团队提供准确的翻译。每天有数百万人使用DeepL进行翻译。', 'active', 45, '2024-09-02 09:02:48.686', '2024-10-10 16:40:01.128', 0, '#000000');
-INSERT INTO `applications` VALUES (140, 'DuckDuck邮箱', 'https://duckduckgo.com/email/favicon.ico', 'https://duckduckgo.com/email/settings/autofill', 'DuckDuckGo是一个互联网搜索引擎', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (140, 'DuckDuck邮箱', 'https://duckduckgo.com/static-assets/favicons/DDG-icon_256x256.png', 'https://duckduckgo.com/email/settings/autofill', 'DuckDuckGo是一个互联网搜索引擎', 'active', 45, '2024-09-02 09:02:48.686', '2024-10-10 16:57:11.769', 0, '#000000');
 INSERT INTO `applications` VALUES (141, 'FOFA网络空间测绘', 'https://fofa.info/favicon.ico', 'https://fofa.info/', 'FOFA 是白帽汇推出的一款网络空间搜索引擎，它通过进行网络空间测绘，能够帮助研究人员或者企业迅速进行网络资产匹配，例如进行漏洞影响范围分析、应用分布统计、应用流行度排名统计等。', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (142, '霂明坊 - 创意工作者的优质论坛', 'https://mumingfang.com/favicon.ico', 'https://mumingfang.com/', '霂明坊是一个汇集了众多创意工作者的优质社区。在这里，你可以与其他创意工作者交流、分享和学习，共同成长', 'active', 48, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (143, '临时邮箱生成', 'https://rootsh.com/favicon.ico', 'https://rootsh.com/', '免费的临时邮箱注册，接收。', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -232,7 +232,7 @@ CREATE TABLE `site_settings`  (
 -- ----------------------------
 -- Records of site_settings
 -- ----------------------------
-INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-10 16:35:04.045', '', '');
+INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-10 16:53:13.545', '', '');
 
 -- ----------------------------
 -- Table structure for users
@@ -256,7 +256,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4NjM1NjkwfQ.BhPR3_mmQ9bk8osNWnfTMYAHooBDf24LirUP4wpiwxk', '2024-09-11 14:40:42.069', '2024-10-10 16:34:50.009', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4NjM2Nzc4fQ.HqZWoNXYKvMWw0gZc4cpUmrRCWgjkE8mdwD4hNIvYjQ', '2024-09-11 14:40:42.069', '2024-10-10 16:52:58.866', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
