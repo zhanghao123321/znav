@@ -50,24 +50,24 @@ services:
       retries: 3
     restart: always
 
-  lsky-pro:
-    container_name: lsky-pro
-    image: dko0/lsky-pro
-    restart: always
-    volumes:
-      - ./data/lsky:/var/www/html  # 映射到本地
-    ports:
-      - "12345:80"  # 左侧换成你的空闲端口号，映射到宿主机
-    environment:
-      - MYSQL_HOST=mysql
-      - MYSQL_DATABASE=lsky
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=123456
-    networks:
-      - znav_network
-    depends_on:
-      - mysql  # 等待 MySQL 启动
-    restart: always
+  #lsky-pro:
+  #  container_name: lsky-pro
+  #  image: dko0/lsky-pro
+  #  restart: always
+  #  volumes:
+  #    - ./data/lsky:/var/www/html  # 映射到本地
+  #  ports:
+  #    - "12345:80"  # 左侧换成你的空闲端口号，映射到宿主机
+  #  environment:
+  #    - MYSQL_HOST=mysql
+  #    - MYSQL_DATABASE=lsky
+  #    - MYSQL_USER=root
+  #    - MYSQL_PASSWORD=123456
+  #  networks:
+  #    - znav_network
+  #  depends_on:
+  #    - mysql  # 等待 MySQL 启动
+  #  restart: always
 
 networks:
   znav_network:
