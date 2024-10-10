@@ -10,8 +10,6 @@ services:
       - DB_PORT=3306   # 数据库端口
       - DB_NAME=znav   # zanv数据库
       - JWT_SECRET=supersecret
-      - IMAGE_HOST_URL=http://lsky-pro/api/v1/upload                       # 添加图床地址
-      - IMAGE_HOST_TOKEN=2|5btba5SCgSxjGiZMyhzFrFfKZZDYsp1lLWE4Vb1t        # 添加图床 Token，需要替换为实际值
     ports:
       - "8080:8080"  # 暴露后端的 8080 端口
     networks:
@@ -49,25 +47,6 @@ services:
       interval: 10s
       retries: 3
     restart: always
-
-  #lsky-pro:
-  #  container_name: lsky-pro
-  #  image: dko0/lsky-pro
-  #  restart: always
-  #  volumes:
-  #    - ./data/lsky:/var/www/html  # 映射到本地
-  #  ports:
-  #    - "12345:80"  # 左侧换成你的空闲端口号，映射到宿主机
-  #  environment:
-  #    - MYSQL_HOST=mysql
-  #    - MYSQL_DATABASE=lsky
-  #    - MYSQL_USER=root
-  #    - MYSQL_PASSWORD=123456
-  #  networks:
-  #    - znav_network
-  #  depends_on:
-  #    - mysql  # 等待 MySQL 启动
-  #  restart: always
 
 networks:
   znav_network:

@@ -11,8 +11,7 @@ type SiteSettings struct {
 	IconColor      string    `json:"icon_color"`
 	Footer         string    `json:"footer"`
 	Icp            string    `json:"icp"`
-	ImageHostUrl   string    `json:"image_host_url"`
-	ImageHostToken string    `json:"image_host_token"`
+	ImageHostToken string    `json:"image_host_token"` // 保留图床 Token
 	CreatedAt      time.Time `json:"created_at"`
 	UpdatedAt      time.Time `json:"updated_at"`
 }

@@ -14,7 +14,6 @@ export default createStore({
             icon_color: '',
             footerInfo: '',
             recordNumber: '',
-            image_host_url: '',
             image_host_token: ''
         },
     },

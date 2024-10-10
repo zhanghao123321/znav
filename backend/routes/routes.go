@@ -35,6 +35,8 @@ func SetupRouter() *gin.Engine {
 	public.GET("/scrape-website", controllers.ScrapeWebsiteHandler)
 	// 同步图标到图床
 	public.POST("/sync-icon", controllers.SyncIconHandler)
+	// 保存图床 Token
+	public.POST("/save-token", controllers.SaveImageHostTokenHandler)
 
 	private := router.Group("/api")
 	private.Use(middlewares.AuthMiddleware())

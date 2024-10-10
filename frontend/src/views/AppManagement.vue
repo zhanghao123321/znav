@@ -532,6 +532,16 @@ export default {
   created() {
     this.fetchMenus();
   },
+  computed: {
+    settings: {
+      get() {
+        return this.$store.getters.siteSettings;
+      },
+      set(value) {
+        this.$store.commit('setSiteSettings', value);
+      }
+    }
+  },
   methods: {
     initializeMenus() {
       // 过滤出有子菜单的一级菜单
@@ -846,22 +856,33 @@ export default {
         return;
       }
 
+      // 检查 settings 和 image_host_token 是否存在
+      if (!this.settings || !this.settings.image_host_token) {
+        this.$message.error('请先输入图床Token');
+        return;
+      }
+
       this.isSyncingIcon = true;
       try {
         const response = await axios.post(
             `${process.env.VUE_APP_API_URL}/sync-icon`,
-            { icon_url: this.app.icon },
             {
-              headers: { Authorization: `Bearer ${this.$store.state.token}` },
+              icon_url: this.app.icon,
+              token: this.settings.image_host_token
             }
         );
 
         const data = response.data;
-        this.app.icon = data.icon_url || '';
-        this.$message.success('图标已成功同步到图床');
+
+        if (data.icon_url) {
+          // 将返回的 icon_url 自动填入到 icon 输入框中
+          this.app.icon = data.icon_url;
+          this.$message.success('图标已成功同步到图床');
+        } else {
+          this.$message.error('同步图标失败：没有返回有效的 URL');
+        }
       } catch (error) {
         console.error('Error syncing icon to image host:', error);
-        // 显示后端返回的错误信息
         if (error.response && error.response.data && error.response.data.error) {
           this.$message.error('同步图标失败：' + error.response.data.error);
         } else {

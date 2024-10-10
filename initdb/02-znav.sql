@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 08/10/2024 16:21:11
+ Date: 10/10/2024 16:18:14
 */
 
 SET NAMES utf8mb4;
@@ -41,11 +41,11 @@ CREATE TABLE `applications`  (
 -- ----------------------------
 -- Records of applications
 -- ----------------------------
-INSERT INTO `applications` VALUES (62, 'LINUX DO', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32_e575feda544c0.png', 'https://linux.do/', '真诚、友善、团结、专业，共建你我引以为荣之社区。', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-05 01:27:48.022', -7, '#000000');
+INSERT INTO `applications` VALUES (62, 'LINUX DO', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_58e05dfaee148.png', 'https://linux.do/', '真诚、友善、团结、专业，共建你我引以为荣之社区。', 'active', 42, '2024-09-02 09:02:48.686', '2024-10-10 16:08:02.979', -7, '#000000');
 INSERT INTO `applications` VALUES (63, '水墨图床', 'https://img.ink/favicon.ico', 'https://img.ink/', '图片映客--水墨图床，免费专业的高速外链图床-免费高速图床-致力于创建一流的图片加速空间', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (64, 'ChatGPT', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon.82af6fe1_0add8de44f2d9.png', 'https://www.chatgpt.com/', 'ChatGPT 是OpenAI研发的一款聊天机器人程序', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-25 15:06:52.375', -10, '#000000');
-INSERT INTO `applications` VALUES (65, 'New API', 'https://zh.hooz.fun/logo.png', 'https://zh.hooz.fun/', 'OpenAI 接口聚合管理，支持多种渠道包括 Azure，可用于二次分发管理 key，仅单可执行文件，已打包好 Docker 镜像，一键部署，开箱即用', 'active', 42, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', -9, '#000000');
-INSERT INTO `applications` VALUES (66, 'Claude', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/apple-touch-icon_0240e958f5fb5.png', 'https://claude.ai/', 'Claude，美国人工智能初创公司Anthropic发布的大型语言模型家族', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (65, 'New API', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_2d18f2b7e080c.png', 'https://zh.hooz.fun/', 'OpenAI 接口聚合管理，支持多种渠道包括 Azure，可用于二次分发管理 key，仅单可执行文件，已打包好 Docker 镜像，一键部署，开箱即用', 'active', 42, '2024-09-02 09:02:48.686', '2024-10-10 16:15:03.945', -9, '#000000');
+INSERT INTO `applications` VALUES (66, 'Claude', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_40ed4d522ab67.png', 'https://claude.ai/', 'Claude，美国人工智能初创公司Anthropic发布的大型语言模型家族', 'active', 44, '2024-09-02 09:02:48.686', '2024-10-10 16:08:19.082', 0, '#000000');
 INSERT INTO `applications` VALUES (67, 'Kimi', 'https://statics.moonshot.cn/kimi-chat/favicon.ico', 'https://kimi.moonshot.cn/', 'Kimi 是一个有着超大“内存”的智能助手，可以一口气读完二十万字的小说，还会上网冲浪，快来跟他聊聊吧 | Kimi.ai - Moonshot AI 出品的智能助手', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-04 03:33:37.155', 0, '#000000');
 INSERT INTO `applications` VALUES (68, 'ChatGLM', 'https://chatglm.cn/img/logo-collapse.d00ef130.svg', 'https://www.chatglm.cn/', 'ChatGLM是清华大学开发的,经过约1T标识符的中英双语训练,拥有62 亿参数的开源AI大语言模型,它能生成相当符合人类偏好的回答。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (69, '讯飞星火', 'https://xinghuo.xfyun.cn/spark-icon.ico', 'https://xinghuo.xfyun.cn/', '讯飞星火大模型，是由科大讯飞推出的新一代认知智能大模型，拥有跨领域的知识和语言理解能力，能够基于自然对话方式理解与执行任务，提供语言理解、知识问答、逻辑推理、数学题解答、代码理解与编写等多种能力。', 'active', 44, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -57,7 +57,7 @@ INSERT INTO `applications` VALUES (74, '豆包', 'https://lf-flow-web-cdn.doubao
 INSERT INTO `applications` VALUES (75, '阿里云', 'https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico', 'https://www.aliyun.com/', '阿里云——阿里巴巴集团旗下公司，是全球领先的云计算及人工智能科技公司之一。提供免费试用、云服务器、云数据库、云安全、云企业应用等云计算服务，以及大数据、人工智能服务、精准定制基于场景的行业解决方案。免费备案，7x24小时售后支持，助企业无忧上云。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (76, '腾讯云', 'https://cloudcache.tencent-cloud.com/qcloud/favicon.ico?t=201902181234', 'https://cloud.tencent.com/', '腾讯云(tencent cloud)为数百万的企业和开发者提供安全稳定的云计算服务，涵盖云服务器、云数据库、云存储、视频与CDN、域名注册等全方位云服务和各行业解决方案。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (77, '华为云', 'https://www.huaweicloud.com/favicon.ico', 'https://www.huaweicloud.com/', '华为云提供稳定可靠、安全可信、可持续发展的云服务，致力于让云无处不在，让智能无所不及，共建智能世界云底座。助力企业降本增效，全球300万客户的共同选择。7x24小时专业服务支持，5天内无理由退订，免费快速备案。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (78, '又拍云', 'https://console.upyun.com/assets/favicon.png', 'https://console.upyun.com/', '又拍云是国内知名企业级云服务商、国家高新技术企业，持有工信部颁发的 CDN 牌照；致力于为客户提供一站式的在线业务加速服务。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (78, '又拍云', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_4e5a35ec9cc30.png', 'https://console.upyun.com/', '又拍云是国内知名企业级云服务商、国家高新技术企业，持有工信部颁发的 CDN 牌照；致力于为客户提供一站式的在线业务加速服务。', 'active', 43, '2024-09-02 09:02:48.686', '2024-10-10 16:16:54.711', 0, '#000000');
 INSERT INTO `applications` VALUES (79, 'AWS云服务', 'https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico', 'https://aws.amazon.com/cn/', 'Amazon Web Services 提供的云计算服务可靠、可扩展且费用合理。免费加入，只需按使用量付费。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (80, 'Oracle Cloud', 'https://signup.cloud.oracle.com/oraclefavicon.ico', 'https://signup.cloud.oracle.com/', 'Oracle Cloud Free Tier Signup', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (81, 'cloudflare', 'https://dash.cloudflare.com/favicon.ico', 'https://dash.cloudflare.com/', 'Cloudflare是比较出名的且少有能免费使用的美国CDN服务商。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
@@ -225,7 +225,6 @@ CREATE TABLE `site_settings`  (
   `created_at` datetime(3) NULL DEFAULT NULL,
   `updated_at` datetime(3) NULL DEFAULT NULL,
   `icon_color` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-  `image_host_url` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `image_host_token` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
@@ -233,7 +232,7 @@ CREATE TABLE `site_settings`  (
 -- ----------------------------
 -- Records of site_settings
 -- ----------------------------
-INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-08 16:18:25.860', '', 'http://lsky-pro', '4|0RNALhyfVzEdNkmhavZd6GowXyMX3OzptmMkDciE');
+INSERT INTO `site_settings` VALUES (1, 'zh导航', 'https://img1.baidu.com/it/u=1217061905,2277984247&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500', 'zh导航. All Rights Reserved.', '123456', '2024-10-08 16:04:30.063', '2024-10-10 15:11:55.025', '', 'c10cc8537aeae7519d552c5dadaf6343');
 
 -- ----------------------------
 -- Table structure for users

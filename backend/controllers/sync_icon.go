@@ -1,3 +1,5 @@
+// controllers/controllers.go
+
 package controllers
 
 import (
@@ -8,15 +10,16 @@ import (
 	"mime/multipart"
 	"net/http"
 	"time"
-
-	"github.com/gin-gonic/gin"
 	"znav/backend/database"
 	"znav/backend/models"
+
+	"github.com/gin-gonic/gin"
 )
 
 func SyncIconHandler(c *gin.Context) {
 	var requestData struct {
 		IconURL string `json:"icon_url"`
+		Token   string `json:"token"`
 	}
 
 	if err := c.ShouldBindJSON(&requestData); err != nil {
@@ -29,17 +32,8 @@ func SyncIconHandler(c *gin.Context) {
 		return
 	}
 
-	db := database.GetDB()
-
-	// 使用固定的 ID 获取设置
-	var settings models.SiteSettings
-	if err := db.First(&settings, 1).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "图床配置未设置，请先在网站设置中配置"})
-		return
-	}
-
-	if settings.ImageHostUrl == "" || settings.ImageHostToken == "" {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "图床地址或 Token 未配置，请在网站设置中填写"})
+	if requestData.Token == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Token is required"})
 		return
 	}
 
@@ -51,16 +45,95 @@ func SyncIconHandler(c *gin.Context) {
 	}
 
 	// 上传图标到图床
-	uploadedURL, err := uploadImage(iconData, settings.ImageHostUrl, settings.ImageHostToken)
+	uploadedURL, err := uploadImage(iconData, requestData.Token)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("Failed to upload icon: %v", err)})
 		return
 	}
 
+	// 成功时，返回图床上传成功后的 URL
 	c.JSON(http.StatusOK, gin.H{"icon_url": uploadedURL})
 }
 
-// 下载图片数据
+func uploadImage(imageData []byte, token string) (string, error) {
+	uploadURL := "https://img.ink/api/upload"
+
+	var body bytes.Buffer
+	writer := multipart.NewWriter(&body)
+
+	// 设置图片文件的字段
+	part, err := writer.CreateFormFile("image", "icon.png")
+	if err != nil {
+		return "", fmt.Errorf("创建文件字段失败: %w", err)
+	}
+
+	_, err = part.Write(imageData)
+	if err != nil {
+		return "", fmt.Errorf("写入图片数据失败: %w", err)
+	}
+
+	// 设置文件夹字段为 "icofolder"
+	err = writer.WriteField("folder", "icofolder")
+	if err != nil {
+		return "", fmt.Errorf("写入 folder 字段失败: %w", err)
+	}
+
+	err = writer.Close()
+	if err != nil {
+		return "", fmt.Errorf("关闭写入器失败: %w", err)
+	}
+
+	// 创建请求
+	req, err := http.NewRequest("POST", uploadURL, &body)
+	if err != nil {
+		return "", fmt.Errorf("创建上传请求失败: %w", err)
+	}
+
+	// 设置 token 头，而不是 Authorization
+	req.Header.Set("token", token)
+	req.Header.Set("Content-Type", writer.FormDataContentType())
+
+	client := &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return "", fmt.Errorf("上传请求失败: %w", err)
+	}
+	defer resp.Body.Close()
+
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", fmt.Errorf("读取响应体失败: %w", err)
+	}
+
+	// 打印图床返回的状态码和响应体
+	//fmt.Printf("图床返回的状态码: %d\n", resp.StatusCode)
+	//fmt.Printf("图床返回的响应体: %s\n", string(respBody))
+
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("上传失败，状态码: %d，响应: %s", resp.StatusCode, string(respBody))
+	}
+
+	// 解析图床返回的结果
+	var result struct {
+		Code int    `json:"code"`
+		Msg  string `json:"msg"`
+		Data struct {
+			URL string `json:"url"`
+		} `json:"data"`
+	}
+
+	err = json.Unmarshal(respBody, &result)
+	if err != nil {
+		return "", fmt.Errorf("解析上传响应失败: %w", err)
+	}
+
+	if result.Code != 200 {
+		return "", fmt.Errorf("上传失败: %s", result.Msg)
+	}
+
+	return result.Data.URL, nil
+}
+
 func downloadImage(imageURL string) ([]byte, error) {
 	client := &http.Client{
 		Timeout: 10 * time.Second,
@@ -90,95 +163,36 @@ func downloadImage(imageURL string) ([]byte, error) {
 	return imageData, nil
 }
 
-func uploadImage(imageData []byte, baseURL string, token string) (string, error) {
-	if baseURL == "" || token == "" {
-		return "", fmt.Errorf("图床地址或 Token 未配置")
+// 保存图床 Token 的接口
+func SaveImageHostTokenHandler(c *gin.Context) {
+	var requestData struct {
+		Token string `json:"token"`
 	}
 
-	// 构建上传接口的完整 URL
-	uploadURL := fmt.Sprintf("%s/api/v1/upload", baseURL)
-
-	// 创建一个缓冲区用于存储 multipart/form-data 数据
-	var body bytes.Buffer
-	writer := multipart.NewWriter(&body)
-
-	// 创建文件字段，字段名为 "file"
-	part, err := writer.CreateFormFile("file", "icon.png")
-	if err != nil {
-		return "", fmt.Errorf("创建文件字段失败: %w", err)
+	if err := c.ShouldBindJSON(&requestData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request data"})
+		return
 	}
 
-	// 将图片数据写入文件字段
-	_, err = part.Write(imageData)
-	if err != nil {
-		return "", fmt.Errorf("写入图片数据失败: %w", err)
+	if requestData.Token == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Token is required"})
+		return
 	}
 
-	// 关闭 multipart 写入器，添加结尾的 boundary
-	err = writer.Close()
-	if err != nil {
-		return "", fmt.Errorf("关闭写入器失败: %w", err)
+	db := database.GetDB()
+
+	var settings models.SiteSettings
+	if err := db.First(&settings, 1).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "无法获取站点设置"})
+		return
 	}
 
-	// 创建请求
-	req, err := http.NewRequest("POST", uploadURL, &body)
-	if err != nil {
-		return "", fmt.Errorf("创建上传请求失败: %w", err)
+	settings.ImageHostToken = requestData.Token
+
+	if err := db.Save(&settings).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "无法保存 Token"})
+		return
 	}
 
-	// 设置请求头
-	req.Header.Set("Content-Type", writer.FormDataContentType())
-	// 设置 Authorization 头部
-	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
-
-	// （可选）打印请求信息（调试用）
-	// fmt.Printf("请求 URL: %s\n", uploadURL)
-	// fmt.Printf("请求头部: %v\n", req.Header)
-
-	// 发送请求
-	client := &http.Client{
-		Timeout: 10 * time.Second,
-	}
-	resp, err := client.Do(req)
-	if err != nil {
-		return "", fmt.Errorf("上传请求失败: %w", err)
-	}
-	defer resp.Body.Close()
-
-	// 读取响应体
-	respBody, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", fmt.Errorf("读取响应体失败: %w", err)
-	}
-
-	// （可选）打印响应信息（调试用）
-	// fmt.Printf("响应状态码: %d\n", resp.StatusCode)
-	// fmt.Printf("响应 Body: %s\n", string(respBody))
-
-	// 检查响应状态码
-	if resp.StatusCode != http.StatusOK {
-		return "", fmt.Errorf("上传失败，状态码: %d，响应: %s", resp.StatusCode, string(respBody))
-	}
-
-	// 解析响应
-	var result struct {
-		Status  bool   `json:"status"`
-		Message string `json:"message"`
-		Data    struct {
-			Links struct {
-				URL string `json:"url"`
-			} `json:"links"`
-		} `json:"data"`
-	}
-
-	err = json.Unmarshal(respBody, &result)
-	if err != nil {
-		return "", fmt.Errorf("解析上传响应失败: %w", err)
-	}
-
-	if !result.Status {
-		return "", fmt.Errorf("上传失败: %s", result.Message)
-	}
-
-	return result.Data.Links.URL, nil
+	c.JSON(http.StatusOK, gin.H{"message": "Token 保存成功"})
 }
