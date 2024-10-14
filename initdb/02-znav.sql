@@ -1,17 +1,17 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : 124.70.135.41
+ Source Server         : 192.168.222.173
  Source Server Type    : MySQL
  Source Server Version : 80400 (8.4.0)
- Source Host           : 124.70.135.41:3306
+ Source Host           : 192.168.222.173:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 10/10/2024 17:04:39
+ Date: 14/10/2024 09:11:39
 */
 
 SET NAMES utf8mb4;
@@ -256,7 +256,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$uzFqW5e3w/2hUgOjXerJH.bkM5RF5./9fhpTQtcmCmUjM3THi/yg6', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4NjM2Nzc4fQ.HqZWoNXYKvMWw0gZc4cpUmrRCWgjkE8mdwD4hNIvYjQ', '2024-09-11 14:40:42.069', '2024-10-10 16:52:58.866', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$XCHc16s4UfImE9g79eTaiuFSXrVpZbNXGuCXIDuWmIH8TIRPaF.ye', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4OTU0NjY4fQ.0z3OJ7XLjY2JrUNb-9SL3KeZiCgJ37aRVMnS5skUnPA', '2024-09-11 14:40:42.069', '2024-10-14 09:11:08.210', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
