@@ -18,9 +18,9 @@ admin
 admin
 
 前台：
-![image](https://github.com/user-attachments/assets/4f1def89-5d57-4e55-b8a8-1d6e6d38c331)
+[![image](https://github.com/user-attachments/assets/4f1def89-5d57-4e55-b8a8-1d6e6d38c331)](https://github.com/zhanghao123321/znav/blob/main/%E5%89%8D%E5%8F%B0%E9%A1%B5%E9%9D%A2.png)
 后台：
-![image](https://github.com/user-attachments/assets/87aae9cf-f0b9-49d0-8871-44db2f81964c)
+[![image](https://github.com/user-attachments/assets/87aae9cf-f0b9-49d0-8871-44db2f81964c)](https://github.com/zhanghao123321/znav/blob/main/%E5%90%8E%E5%8F%B0%E9%A1%B5%E9%9D%A2.png)
 
 ```
 
