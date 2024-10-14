@@ -11,6 +11,11 @@ docker-compose -f docker-compose.image.yml up -d
 
 ### 重新构建镜像运行
 docker-compose -f docker-compose.build.yml up --build -d
+
+### web访问：
+http:ip
+admin
+admin
 ```
 
 ## K8S部署
