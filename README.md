@@ -1,6 +1,7 @@
 # znav
 ## Docker部署
 ```shell
+mkdir /data && cd /data
 git clone https://github.com/zhanghao123321/znav.git
 cd znav
 ### 修改docker-compose.image.yml文件

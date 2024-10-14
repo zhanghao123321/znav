@@ -8,7 +8,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /root/znav
+    path: /data/znav/initdb
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
