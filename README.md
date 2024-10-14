@@ -16,6 +16,12 @@ docker-compose -f docker-compose.build.yml up --build -d
 http:ip
 admin
 admin
+
+前台：
+![image](https://github.com/user-attachments/assets/4f1def89-5d57-4e55-b8a8-1d6e6d38c331)
+后台：
+![image](https://github.com/user-attachments/assets/87aae9cf-f0b9-49d0-8871-44db2f81964c)
+
 ```
 
 ## K8S部署
