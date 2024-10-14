@@ -1,11 +1,11 @@
 # znav
 ## Docker部署
 ```shell
+### 拉取项目
 mkdir /data && cd /data
 git clone https://github.com/zhanghao123321/znav.git
 cd znav
-### 修改docker-compose.image.yml文件
-vim docker-compose.image.yml
+### 按需修改docker-compose.image.yml文件
 
 ### 已构建后镜像运行
 docker-compose -f docker-compose.image.yml up -d
@@ -27,6 +27,8 @@ admin
 
 ## K8S部署
 ```
+### 1.构建服务
+mkdir /data && cd /data
 git clone https://github.com/zhanghao123321/znav.git
 cd znav
 kubectl apply -f mysql-pv.yaml
@@ -34,4 +36,6 @@ kubectl apply -f mysql-deployment.yaml
 kubectl apply -f backend-deployment.yaml
 kubectl apply -f frontend-deployment.yaml
 kubectl apply -f znav-ingress.yaml
+### 2.查看服务
+kubectl get pod,svc,ingress  -n production
 ```
