@@ -1,17 +1,17 @@
-/*
+﻿/*
  Navicat Premium Dump SQL
 
- Source Server         : 192.168.222.173
+ Source Server         : 124.70.135.41
  Source Server Type    : MySQL
  Source Server Version : 80400 (8.4.0)
- Source Host           : 192.168.222.173:3306
+ Source Host           : 124.70.135.41:3306
  Source Schema         : znav
 
  Target Server Type    : MySQL
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 14/10/2024 09:11:39
+ Date: 15/10/2024 11:32:40
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 232 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 235 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -128,7 +128,7 @@ INSERT INTO `applications` VALUES (146, 'Random Credit Card', 'https://namso-gen
 INSERT INTO `applications` VALUES (147, 'Free Credit Card Checker', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_0427fa422ff49.png', 'https://checker.top/', 'Online credit card checker instantly. Check CCN and CCV free. CC checker and Bin checker live or dead, free forever.', 'active', 50, '2024-09-02 09:02:48.686', '2024-10-10 16:39:22.639', 0, '#000000');
 INSERT INTO `applications` VALUES (148, '随机密码生成器 - 在线工具', 'fluent:password-16-regular', 'https://tool.lu/strrandom/', '随机密码生成器，随机字符串生成器', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-23 17:13:50.223', 0, '#EA0B0B');
 INSERT INTO `applications` VALUES (149, 'Diffchecker - 在线比较文本', 'https://www.diffchecker.com/favicon.ico', 'https://www.diffchecker.com/zh-Hans/', 'Diffchecker 将比较文本以找出两个文本文件之间的差异。只需粘贴您的文件，然后单击查找差异！', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (150, '后浪云', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_aca33f89fb18b.png', 'https://www.idc.net/addons?_plugin=13&_controller=index&_action=index', '后浪云专注于简单好用，价格厚道的香港云服务器、美国云服务器、香港服务器、美国服务器、日韩服务器等全球IDC服务。APNIC+ARIN双会员，IDC+ISP+ICP资质，15年运营经验。服务热线：4000-070-040。服务网站: IDC.NET。', 'active', 43, '2024-09-02 09:02:48.686', '2024-10-10 16:39:47.749', 0, '#000000');
+INSERT INTO `applications` VALUES (150, '后浪云', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_aca33f89fb18b.png', 'https://www.idc.net/addons?_plugin=13&_controller=index&_action=index', '后浪云专注于简单好用，价格厚道的香港云服务器、美国云服务器、香港服务器、美国服务器、日韩服务器等全球IDC服务。APNIC+ARIN双会员，IDC+ISP+ICP资质，15年运营经验。服务热线：4000-070-040。服务网站: IDC.NET。', 'active', 43, '2024-09-02 09:02:48.686', '2024-10-15 11:28:58.687', 1, '#000000');
 INSERT INTO `applications` VALUES (151, '知乎网', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_1c3647688e840.png', 'https://www.zhihu.com/', '知乎,中文互联网高质量的问答社区和创作者聚集的原创内容平台', 'active', 48, '2024-09-02 09:02:48.686', '2024-10-10 16:39:36.334', 0, '#000000');
 INSERT INTO `applications` VALUES (152, 'Chat评测榜单', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_d205ccdd9ff52.png', 'https://rank.opencompass.org.cn/leaderboard-llm', '评测榜单旨在为大语言模型和多模态模型提供全面、客观且中立的得分与排名，同时提供多能力维度的评分参考，以便用户能够更全面地了解大模型的能力水平。', 'active', 44, '2024-09-02 09:02:48.686', '2024-10-10 16:39:43.557', 0, '#000000');
 INSERT INTO `applications` VALUES (153, 'Golang中文社区', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/favicon_205797a06c09a.ico', 'https://studygolang.com/', 'Go语言中文网，中国 Golang 社区，Go语言学习园地，致力于构建完善的 Golang 中文社区，Go语言爱好者的学习家园。分享 Go 语言知识，交流使用经验', 'active', 70, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', -9, '#000000');
@@ -170,12 +170,15 @@ INSERT INTO `applications` VALUES (220, 'OpenUI', 'mdi:material-ui', 'https://op
 INSERT INTO `applications` VALUES (221, 'AI工具集官网', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_c3b1573ca7f96.png', 'https://ai-bot.cn/', 'AI工具集官网收录了国内外数百个AI工具，该导航网站包括AI写作工具、AI图像生成和背景移除、AI视频制作、AI音频转录、AI辅助编程、AI音乐生成、AI绘画设计、AI对话聊天等AI工具集合大全，以及AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！', 'active', 44, '2024-09-20 17:51:10.773', '2024-10-10 16:36:12.242', 0, '#000000');
 INSERT INTO `applications` VALUES (223, 'DWAI', 'https://dw.dwai.world/list/favicon.ico', 'https://dw.dwai.world/list', 'ChatGPT公益站点', 'active', 44, '2024-09-20 17:54:49.119', '2024-09-20 17:58:18.388', 0, '#000000');
 INSERT INTO `applications` VALUES (224, 'AMZ123亚马逊导航', 'tabler:layout-navbar-collapse', 'https://amz123.com', 'AMZ123亚马逊导航是一家致力于服务中国跨境电商从业者的综合平台，以让跨境电商出海更便捷为使命，始终围绕卖家需求，为卖家提供实时的跨境资讯，实用的跨境干货、工具、数据和服务，打造一站式跨境流量入口。做跨境电商，就上AMZ123。', 'active', 44, '2024-09-20 18:07:21.940', '2024-09-20 18:07:21.940', 0, '#29B1B5');
-INSERT INTO `applications` VALUES (225, '腾讯安全|威胁情报中心', 'https://tix.qq.com/favicon.ico', 'https://tix.qq.com/', '第一手威胁情报,小程序一手掌握 情报动态 当前有效安全情报。', 'active', 43, '2024-09-23 15:45:24.855', '2024-09-23 15:46:37.737', 0, '#000000');
+INSERT INTO `applications` VALUES (225, '腾讯安全|威胁情报中心', 'https://tix.qq.com/favicon.ico', 'https://tix.qq.com/', '第一手威胁情报,小程序一手掌握 情报动态 当前有效安全情报。', 'active', 43, '2024-09-23 15:45:24.855', '2024-10-15 11:28:34.263', 1, '#000000');
 INSERT INTO `applications` VALUES (226, '程序员开发工具大全', 'fluent:window-dev-tools-16-filled', 'https://tool.ip138.com/', '程序员开发工具提供众多程序开发过程中需要用到的在线工具，有JSON格式化、 Javascript格式化、CSS格式化、URL编码、时间戳转换、正则表达式等各种在线工具。', 'active', 45, '2024-09-23 17:11:42.237', '2024-09-23 17:11:42.237', 0, '#159235');
 INSERT INTO `applications` VALUES (227, 'Ingress-Nginx Controller', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/favicon_5752b4ad79538.png', 'https://kubernetes.github.io/ingress-nginx/', 'This is the documentation for the Ingress NGINX Controller.', 'active', 54, '2024-09-25 15:05:17.746', '2024-10-10 16:35:32.532', 0, '#000000');
 INSERT INTO `applications` VALUES (228, 'kubeasz', 'eos-icons:kubelet-outlined', 'https://github.com/easzlab/kubeasz', '使用Ansible脚本安装K8S集群，介绍组件交互原理，方便直接，不受国内网络环境影响. Contribute to easzlab/kubeasz development by creating an account on GitHub.', 'active', 54, '2024-09-25 15:06:37.845', '2024-09-25 15:06:37.845', 0, '#0CA5BC');
 INSERT INTO `applications` VALUES (230, 'Light2f', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_f197f32311bb2.png', 'https://light2f.com/#/home', '前端中后台低代码（lowcode）可视化开发平台', 'active', 68, '2024-09-27 10:46:57.458', '2024-10-10 16:35:40.947', 0, '#000000');
 INSERT INTO `applications` VALUES (231, '小陈运维 k8s', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_d3e9c12d2f142.png', 'https://github.com/cby-chen/Kubernetes', 'kubernetes (k8s) 二进制高可用安装，Binary installation of kubernetes (k8s)  --- 开源不易，帮忙点个star，谢谢了🌹 - cby-chen/Kubernetes', 'active', 54, '2024-09-29 14:52:21.641', '2024-10-10 16:35:15.223', 0, '#000000');
+INSERT INTO `applications` VALUES (232, 'k8s面试题大全', 'https://g.csdnimg.cn/static/logo/favicon32.ico', 'https://blog.csdn.net/MssGuo/article/details/125267817', '本篇模拟面试官提问的各种docker，k8s问题，意在提高面试通过率。_ks8 面试题', 'active', 54, '2024-10-12 13:25:14.579', '2024-10-12 13:25:14.579', 0, '#000000');
+INSERT INTO `applications` VALUES (233, '临时邮箱TempMail', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_f9796af0f021f.png', 'https://tempmail.so/', 'Get your 10-minute temporary email address at TempMail.so. Sign up for free and keep your temporary email addresses for long-term use. Perfect for avoiding spam and keeping your inbox clean.', 'active', 50, '2024-10-15 10:19:28.652', '2024-10-15 10:19:28.652', 0, '#000000');
+INSERT INTO `applications` VALUES (234, '清华大学开源镜像站', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_7ef591868c11f.png', 'https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/', '清华大学开源软件镜像站，致力于为国内和校内用户提供高质量的开源软件镜像、Linux 镜像源服务，帮助用户更方便地获取开源软件。本镜像站由清华大学 TUNA 协会负责运行维护。', 'active', 43, '2024-10-15 11:26:45.677', '2024-10-15 11:27:43.952', 0, '#000000');
 
 -- ----------------------------
 -- Table structure for menus
@@ -256,7 +259,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$XCHc16s4UfImE9g79eTaiuFSXrVpZbNXGuCXIDuWmIH8TIRPaF.ye', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI4OTU0NjY4fQ.0z3OJ7XLjY2JrUNb-9SL3KeZiCgJ37aRVMnS5skUnPA', '2024-09-11 14:40:42.069', '2024-10-14 09:11:08.210', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$030mv8AT3TC2mfbmH2Z7tOZ4RxCxqoEq7oEJtbYZTHtVANT9dVgbO', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI5MDQ5NTA5fQ.GjS9082Sy7HHjRVgZ-bPAHt_23wtGWzCBFphiICaLww', '2024-09-11 14:40:42.069', '2024-10-15 11:31:58.139', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
