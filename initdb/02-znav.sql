@@ -1,4 +1,4 @@
-﻿/*
+/*
  Navicat Premium Dump SQL
 
  Source Server         : 124.70.135.41
@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 15/10/2024 11:32:40
+ Date: 17/10/2024 16:55:09
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 235 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 240 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -158,9 +158,9 @@ INSERT INTO `applications` VALUES (176, 'Portainer', 'https://www.portainer.io/h
 INSERT INTO `applications` VALUES (177, 'gin-vue-admin', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/logo_2cf8cd32e705b.png', 'https://www.gin-vue-admin.com/', 'gin+vue编写的自动化代码开发脚手架，是gin+vue全栈学习最好的项目，腾讯阿里开发均有采用gin-vue-admin为模型进行相关业务开发，代码自动化，加快开发速度，权限系统齐全，减少重复工作', 'active', 70, '2024-09-02 09:02:48.686', '2024-10-10 16:36:38.697', 0, '#000000');
 INSERT INTO `applications` VALUES (178, 'go-admin', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_150a702204a6f.png', 'https://www.go-admin.pro/', 'GIN-VUE-ADMIN 是一款基于GIN+VUE+ElementPlus开发的全栈基础开发平台', 'active', 70, '2024-09-02 09:02:48.686', '2024-10-10 16:36:34.702', 0, '#000000');
 INSERT INTO `applications` VALUES (208, 'Prompt', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_ec09c7708d482.png', 'https://agicto.com/prompt', 'Prompt模版', 'active', 44, '2024-09-04 05:08:52.979', '2024-10-10 16:37:29.840', 0, '#000000');
-INSERT INTO `applications` VALUES (211, 'PearAPI调用平台', 'https://api.pearktrue.cn/favicon.ico', 'https://api.pearktrue.cn/', '欢迎来到PearAPI服务页面,本服务由PearNo提供技术支持,永久免费稳定提供各类API服务接口.', 'active', 45, '2024-09-05 07:55:41.549', '2024-09-06 08:12:51.375', -9, '#000000');
+INSERT INTO `applications` VALUES (211, 'PearAPI调用平台', 'https://api.pearktrue.cn/favicon.ico', 'https://api.pearktrue.cn/', '欢迎来到PearAPI服务页面,本服务由PearNo提供技术支持,永久免费稳定提供各类API服务接口.', 'active', 81, '2024-09-05 07:55:41.549', '2024-10-17 16:47:17.385', -9, '#000000');
 INSERT INTO `applications` VALUES (212, 'ECharts', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_6c3a57ca3c759.png', 'https://echarts.apache.org/', 'Apache ECharts, a powerful, interactive charting and visualization library for browser', 'active', 67, '2024-09-06 09:53:04.728', '2024-10-10 16:36:46.610', 0, '#000000');
-INSERT INTO `applications` VALUES (213, '桑帛云API', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_b0b743afc30bb.png', 'https://api.lolimi.cn/', '桑帛云API,简单、易用、免费。提供多种实用接口,助力开发者高效工作。欢迎体验,探索无限可能,快速的免费API数据接口服务,服务器采用国内,稳定运行,官方交流群：516666275', 'active', 45, '2024-09-09 09:32:55.914', '2024-10-10 16:37:22.940', -8, '#000000');
+INSERT INTO `applications` VALUES (213, '桑帛云API', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_b0b743afc30bb.png', 'https://api.lolimi.cn/', '桑帛云API,简单、易用、免费。提供多种实用接口,助力开发者高效工作。欢迎体验,探索无限可能,快速的免费API数据接口服务,服务器采用国内,稳定运行,官方交流群：516666275', 'active', 81, '2024-09-09 09:32:55.914', '2024-10-17 16:47:23.905', -8, '#000000');
 INSERT INTO `applications` VALUES (215, '网易云课堂', 'tabler:book', 'https://study.163.com/', '网易云课堂，一个专注于成人终身学习的在线教育平台。立足于实用性的要求, 与优质的教育内容创作者一起，为您提供全面、有效的在线学习内容。', 'active', 49, '2024-09-19 14:12:26.928', '2024-09-19 14:30:46.510', 0, '#BF4444');
 INSERT INTO `applications` VALUES (216, 'Element', 'https://element.eleme.cn/favicon.ico', 'https://element.eleme.cn/', 'Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库', 'active', 67, '2024-09-19 14:45:45.113', '2024-09-19 14:46:31.640', 0, '#000000');
 INSERT INTO `applications` VALUES (217, 'Open WebUI', 'https://www.zhozw.cn/static/favicon.png', 'https://www.zhozw.cn/', 'Open WebUI 是一个多功能且直观的开源用户界面,与 ollama 配合使用,它作为一个webui,为用户提供了一个私有化的 ChatGPT 体验。', 'active', 42, '2024-09-20 15:46:58.837', '2024-09-20 15:47:45.384', 0, '#000000');
@@ -179,6 +179,11 @@ INSERT INTO `applications` VALUES (231, '小陈运维 k8s', 'https://pic2.ziyuan
 INSERT INTO `applications` VALUES (232, 'k8s面试题大全', 'https://g.csdnimg.cn/static/logo/favicon32.ico', 'https://blog.csdn.net/MssGuo/article/details/125267817', '本篇模拟面试官提问的各种docker，k8s问题，意在提高面试通过率。_ks8 面试题', 'active', 54, '2024-10-12 13:25:14.579', '2024-10-12 13:25:14.579', 0, '#000000');
 INSERT INTO `applications` VALUES (233, '临时邮箱TempMail', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_f9796af0f021f.png', 'https://tempmail.so/', 'Get your 10-minute temporary email address at TempMail.so. Sign up for free and keep your temporary email addresses for long-term use. Perfect for avoiding spam and keeping your inbox clean.', 'active', 50, '2024-10-15 10:19:28.652', '2024-10-15 10:19:28.652', 0, '#000000');
 INSERT INTO `applications` VALUES (234, '清华大学开源镜像站', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_7ef591868c11f.png', 'https://mirrors.tuna.tsinghua.edu.cn/centos-altarch/', '清华大学开源软件镜像站，致力于为国内和校内用户提供高质量的开源软件镜像、Linux 镜像源服务，帮助用户更方便地获取开源软件。本镜像站由清华大学 TUNA 协会负责运行维护。', 'active', 43, '2024-10-15 11:26:45.677', '2024-10-15 11:27:43.952', 0, '#000000');
+INSERT INTO `applications` VALUES (235, 'Crx扩展搜搜', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_d2aa2e9f7ab43.png', 'https://www.crxsoso.com/', 'Crx搜搜，又名扩展搜搜，可以一键搜索并下载 Chrome，Edge，Firefox，Opera 扩展程序 crx/xpi 安装包和 Microsoft Store 应用程序，并可以将插件安装到 Chrome浏览器，Edge浏览器，QQ浏览器，360浏览器，搜狗浏览器，火狐浏览器等 90+ 款浏览器中。解决无法直接访问 Chrome 应用商店的问题。', 'active', 45, '2024-10-15 11:51:42.026', '2024-10-15 11:51:42.026', 0, '#000000');
+INSERT INTO `applications` VALUES (236, '程序员快看', 'https://cxykk.com/favicon.ico', 'https://cxykk.com/', '本站是一个程序员学习资料的网站', 'active', 48, '2024-10-16 17:26:57.773', '2024-10-16 17:26:57.773', 0, '#000000');
+INSERT INTO `applications` VALUES (237, '韩小韩 API接口站', 'https://api.vvhan.com/favicon.ico', 'https://api.vvhan.com/', '韩小韩api接口 - (api.vvhan.com)是韩小韩博客免费提供的API数据接口调用服务平台，致力于助力为开发者提供便捷、免费、稳定、快速的免费Web API数据接口服务。', 'active', 81, '2024-10-17 16:47:50.363', '2024-10-17 16:47:50.363', 0, '#000000');
+INSERT INTO `applications` VALUES (238, 'Kimivod | 電視劇 電影 動漫 綜藝 線上看首頁', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_27a656c236d2c.png', 'https://kimivod.com/', 'Kimivod，追劇首選高清線上影片免費看，涵蓋電影、電視劇、動漫、綜藝、陸劇、韓劇、美劇、台劇、日劇、BL、泰劇、紀錄片等影視節目！', 'active', 49, '2024-10-17 16:53:40.199', '2024-10-17 16:53:40.199', 0, '#000000');
+INSERT INTO `applications` VALUES (239, '硬核TV', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_2b17a548eda07.png', 'https://yinghe.tv/', '硬核指南，专注收录免费且优质的影音娱乐网站，精选全网高清电影、二次元、音乐、游戏、壁纸、电子书的免费网站和APP，让你的娱乐生活「硬核」起来！硬核指南，够高清才是真硬核！', 'active', 49, '2024-10-17 16:54:04.839', '2024-10-17 16:54:04.839', 0, '#000000');
 
 -- ----------------------------
 -- Table structure for menus
@@ -195,7 +200,7 @@ CREATE TABLE `menus`  (
   `icon_color` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `parent_id` bigint UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 81 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menus
@@ -214,6 +219,7 @@ INSERT INTO `menus` VALUES (67, '开发工具', 'ic:round-menu', 'active', '2024
 INSERT INTO `menus` VALUES (68, '前端开发', 'icon-park-twotone:web-page', 'active', '2024-09-03 02:13:40.346', '2024-09-03 02:13:40.346', -3, '#0CA714', 47);
 INSERT INTO `menus` VALUES (69, '后端开发', 'fluent:window-dev-tools-16-filled', 'active', '2024-09-03 02:14:06.190', '2024-09-03 02:14:06.190', -2, '#0A88AE', 47);
 INSERT INTO `menus` VALUES (70, 'GO开发', 'tabler:brand-golang', 'active', '2024-09-03 02:16:13.063', '2024-09-03 02:16:13.063', -1, '#00D4FF', 47);
+INSERT INTO `menus` VALUES (81, '接口平台', 'hugeicons:api', 'active', '2024-10-17 16:47:03.702', '2024-10-17 16:48:53.302', -3, '#0B4B60', NULL);
 
 -- ----------------------------
 -- Table structure for site_settings
@@ -259,7 +265,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$030mv8AT3TC2mfbmH2Z7tOZ4RxCxqoEq7oEJtbYZTHtVANT9dVgbO', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI5MDQ5NTA5fQ.GjS9082Sy7HHjRVgZ-bPAHt_23wtGWzCBFphiICaLww', '2024-09-11 14:40:42.069', '2024-10-15 11:31:58.139', NULL, 1);
-INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-09-20 15:32:25.109', NULL, 0);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$030mv8AT3TC2mfbmH2Z7tOZ4RxCxqoEq7oEJtbYZTHtVANT9dVgbO', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI5MTU3MTgwfQ.QMkOzfh7mH6d2JlQCSYDdw6IscKc8MoMwO1DZn7jg90', '2024-09-11 14:40:42.069', '2024-10-16 17:26:20.161', NULL, 1);
+INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-10-15 11:34:19.057', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
