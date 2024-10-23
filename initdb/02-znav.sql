@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 17/10/2024 16:55:09
+ Date: 23/10/2024 16:00:54
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 240 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 242 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -64,8 +64,8 @@ INSERT INTO `applications` VALUES (81, 'cloudflare', 'https://dash.cloudflare.co
 INSERT INTO `applications` VALUES (82, 'DNSPod', 'https://cloudcache.tencent-cloud.cn/open_proj/proj_qcloud_v2/tc-console/dnspod/gateway/css/img/dnspod.ico', 'https://www.dnspod.cn/', 'DNSPod是国内提供智能DNS产品的网站，致力于为各类网站提供高质量的电信、网通、教育网双线或者三线智能DNS免费解析。目前DNSPod已经是国内最大的免费DNS解析产品提供商', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (83, '零点云', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/favicon_57f84af1f4630.ico', 'https://bdoos.com/', '欢迎来到零点云,我们为您敲开世界的大门', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (84, 'ChatGPT账号商店', 'https://chatgptid.net/favicon.ico', 'https://chatgptid.net/', '提供ChatGPT账号购买,ChatGPT账号,ChatGPT账号批发,OpenAI账号购买,Chatgpt api,Chatgpt api批发,Chatgpt api购买,OpenAI账号,OpenAI API,ChatGPT4,chatgpt key购买,chatgpt普号购买,chatgpt普号批发,Claude账号,Midjourney账号,专业ai批发平台!', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (85, '阿里云矢量图库', 'https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg', 'https://www.iconfont.cn/', 'iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造，设计和前端开发的便捷工具', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (86, '字节矢量图库', 'https://lf1-cdn2-tos.bytegoofy.com/bydesign/iconparksite/logo.svg', 'http://iconpark.oceanengine.com/home', 'IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (85, '阿里云矢量图库', 'https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg', 'https://www.iconfont.cn/', 'iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造，设计和前端开发的便捷工具', 'active', 82, '2024-09-02 09:02:48.686', '2024-10-23 15:58:45.183', 0, '#000000');
+INSERT INTO `applications` VALUES (86, '字节矢量图库', 'https://lf1-cdn2-tos.bytegoofy.com/bydesign/iconparksite/logo.svg', 'http://iconpark.oceanengine.com/home', 'IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库', 'active', 82, '2024-09-02 09:02:48.686', '2024-10-23 15:58:54.831', 0, '#000000');
 INSERT INTO `applications` VALUES (87, '阿里巴巴开源镜像站', 'https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico', 'https://developer.aliyun.com/mirror/', '阿里巴巴开源镜像站，免费提供Linux镜像下载服务，拥有Ubuntu、CentOS、Deepin、MongoDB、Apache、Maven、Composer等多种开源软件镜像源，此外还提供域名解析DNS、网络授时NTP等服务，致力于为互联网用户提供全面，高效和稳定的基础服务。', 'active', 43, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (88, 'Gitee', 'https://gitee.com/favicon.ico', 'https://gitee.com/', '面向企业提供一站式研发管理解决方案，包括代码管理、项目管理、文档协作、测试管理、CICD、效能度量等多个模块，支持SaaS、私有化等多种部署方式，帮助企业有序规划和管理研发过程，提升研发效率和质量。', 'active', 67, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (89, 'GitHub', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_d3e9c12d2f142.png', 'https://github.com/', 'GitHub是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。', 'active', 67, '2024-09-02 09:02:48.686', '2024-10-10 16:42:47.326', 0, '#000000');
@@ -184,6 +184,8 @@ INSERT INTO `applications` VALUES (236, '程序员快看', 'https://cxykk.com/fa
 INSERT INTO `applications` VALUES (237, '韩小韩 API接口站', 'https://api.vvhan.com/favicon.ico', 'https://api.vvhan.com/', '韩小韩api接口 - (api.vvhan.com)是韩小韩博客免费提供的API数据接口调用服务平台，致力于助力为开发者提供便捷、免费、稳定、快速的免费Web API数据接口服务。', 'active', 81, '2024-10-17 16:47:50.363', '2024-10-17 16:47:50.363', 0, '#000000');
 INSERT INTO `applications` VALUES (238, 'Kimivod | 電視劇 電影 動漫 綜藝 線上看首頁', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_27a656c236d2c.png', 'https://kimivod.com/', 'Kimivod，追劇首選高清線上影片免費看，涵蓋電影、電視劇、動漫、綜藝、陸劇、韓劇、美劇、台劇、日劇、BL、泰劇、紀錄片等影視節目！', 'active', 49, '2024-10-17 16:53:40.199', '2024-10-17 16:53:40.199', 0, '#000000');
 INSERT INTO `applications` VALUES (239, '硬核TV', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_2b17a548eda07.png', 'https://yinghe.tv/', '硬核指南，专注收录免费且优质的影音娱乐网站，精选全网高清电影、二次元、音乐、游戏、壁纸、电子书的免费网站和APP，让你的娱乐生活「硬核」起来！硬核指南，够高清才是真硬核！', 'active', 49, '2024-10-17 16:54:04.839', '2024-10-17 16:54:04.839', 0, '#000000');
+INSERT INTO `applications` VALUES (240, 'ChatGPT店铺', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_68e1f9f6ad134.png', 'https://fk.lqqq.ltd/', 'LQ店铺', 'active', 44, '2024-10-21 16:39:34.793', '2024-10-21 16:39:34.793', 0, '#000000');
+INSERT INTO `applications` VALUES (241, 'Yesicon', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_46169f457576a.png', 'https://yesicon.app/', '185 icon sets with 240k+ icons, search across icon sets in multiple languages, rich filtering by type and style, quick customization of icon colors, sizes and code styles, one-click copy and download for developers and designers', 'active', 82, '2024-10-23 15:59:19.725', '2024-10-23 15:59:19.725', 0, '#000000');
 
 -- ----------------------------
 -- Table structure for menus
@@ -200,7 +202,7 @@ CREATE TABLE `menus`  (
   `icon_color` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `parent_id` bigint UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menus
@@ -220,6 +222,7 @@ INSERT INTO `menus` VALUES (68, '前端开发', 'icon-park-twotone:web-page', 'a
 INSERT INTO `menus` VALUES (69, '后端开发', 'fluent:window-dev-tools-16-filled', 'active', '2024-09-03 02:14:06.190', '2024-09-03 02:14:06.190', -2, '#0A88AE', 47);
 INSERT INTO `menus` VALUES (70, 'GO开发', 'tabler:brand-golang', 'active', '2024-09-03 02:16:13.063', '2024-09-03 02:16:13.063', -1, '#00D4FF', 47);
 INSERT INTO `menus` VALUES (81, '接口平台', 'hugeicons:api', 'active', '2024-10-17 16:47:03.702', '2024-10-17 16:48:53.302', -3, '#0B4B60', NULL);
+INSERT INTO `menus` VALUES (82, '图标库', 'tabler:icons', 'active', '2024-10-23 15:58:32.123', '2024-10-23 15:58:32.123', 0, '#6530A6', 45);
 
 -- ----------------------------
 -- Table structure for site_settings
@@ -265,7 +268,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$030mv8AT3TC2mfbmH2Z7tOZ4RxCxqoEq7oEJtbYZTHtVANT9dVgbO', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI5MTU3MTgwfQ.QMkOzfh7mH6d2JlQCSYDdw6IscKc8MoMwO1DZn7jg90', '2024-09-11 14:40:42.069', '2024-10-16 17:26:20.161', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$030mv8AT3TC2mfbmH2Z7tOZ4RxCxqoEq7oEJtbYZTHtVANT9dVgbO', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzI5NzU2NDczfQ.38U8XPOiqGosz2R0cqGRZsw0LG7cjHrFdEe3bP4YhS4', '2024-09-11 14:40:42.069', '2024-10-23 15:54:33.557', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-10-15 11:34:19.057', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
