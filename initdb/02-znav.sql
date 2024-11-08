@@ -11,7 +11,7 @@
  Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 07/11/2024 13:36:11
+ Date: 08/11/2024 11:27:52
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `applications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_menus_apps`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `fk_menus_apps` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 249 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 251 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of applications
@@ -120,20 +120,20 @@ INSERT INTO `applications` VALUES (138, 'crontab时间计算', 'eos-icons:cronjo
 INSERT INTO `applications` VALUES (139, 'DeepL翻译', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_26d537c13d188.png', 'https://www.deepl.com/zh/translator', '即时翻译文本&完整的文档文件。为个人和团队提供准确的翻译。每天有数百万人使用DeepL进行翻译。', 'active', 45, '2024-09-02 09:02:48.686', '2024-10-10 16:40:01.128', 0, '#000000');
 INSERT INTO `applications` VALUES (140, 'DuckDuck邮箱', 'https://duckduckgo.com/static-assets/favicons/DDG-icon_256x256.png', 'https://duckduckgo.com/email/settings/autofill', 'DuckDuckGo是一个互联网搜索引擎', 'active', 45, '2024-09-02 09:02:48.686', '2024-10-10 16:57:11.769', 0, '#000000');
 INSERT INTO `applications` VALUES (141, 'FOFA网络空间测绘', 'https://fofa.info/favicon.ico', 'https://fofa.info/', 'FOFA 是白帽汇推出的一款网络空间搜索引擎，它通过进行网络空间测绘，能够帮助研究人员或者企业迅速进行网络资产匹配，例如进行漏洞影响范围分析、应用分布统计、应用流行度排名统计等。', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (142, '霂明坊 - 创意工作者的优质论坛', 'https://mumingfang.com/favicon.ico', 'https://mumingfang.com/', '霂明坊是一个汇集了众多创意工作者的优质社区。在这里，你可以与其他创意工作者交流、分享和学习，共同成长', 'active', 48, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (142, '霂明坊', 'https://mumingfang.com/favicon.ico', 'https://mumingfang.com/', '霂明坊是一个汇集了众多创意工作者的优质社区。在这里，你可以与其他创意工作者交流、分享和学习，共同成长', 'active', 48, '2024-09-02 09:02:48.686', '2024-11-08 11:19:17.000', 0, '#000000');
 INSERT INTO `applications` VALUES (143, '临时邮箱生成', 'https://rootsh.com/favicon.ico', 'https://rootsh.com/', '免费的临时邮箱注册，接收。', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (144, '美国地址生成器', 'https://static11.meiguodizhi.com/favicon.ico', 'https://www.meiguodizhi.com/', '随机生成美国地址, 身份信息，信用卡信息，手机号码和其他基本信息。还会随机生成工作信息，财务信息，兴趣爱好等信息。', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (145, '接码平台', 'https://receive-sms-free.cc/favicon.ico', 'https://receive-sms-free.cc/Free-USA-Phone-Number/', 'receive-sms-free手机短信接码平台', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (146, 'Random Credit Card', 'https://namso-gen.com/favicon.svg', 'https://namso-gen.com/?tab=advance\\u0026network=MasterCard', 'Enhance testing, validation, and development with Namsogen – the ultimate solution for precise, valid credit card numbers tailored for seamless integration.', 'active', 50, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
 INSERT INTO `applications` VALUES (147, 'Free Credit Card Checker', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_0427fa422ff49.png', 'https://checker.top/', 'Online credit card checker instantly. Check CCN and CCV free. CC checker and Bin checker live or dead, free forever.', 'active', 50, '2024-09-02 09:02:48.686', '2024-10-10 16:39:22.639', 0, '#000000');
-INSERT INTO `applications` VALUES (148, '随机密码生成器 - 在线工具', 'fluent:password-16-regular', 'https://tool.lu/strrandom/', '随机密码生成器，随机字符串生成器', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-23 17:13:50.223', 0, '#EA0B0B');
-INSERT INTO `applications` VALUES (149, 'Diffchecker - 在线比较文本', 'https://www.diffchecker.com/favicon.ico', 'https://www.diffchecker.com/zh-Hans/', 'Diffchecker 将比较文本以找出两个文本文件之间的差异。只需粘贴您的文件，然后单击查找差异！', 'active', 45, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (148, '随机密码生成器', 'fluent:password-16-regular', 'https://tool.lu/strrandom/', '随机密码生成器，随机字符串生成器', 'active', 45, '2024-09-02 09:02:48.686', '2024-11-08 11:25:06.401', 0, '#EA0B0B');
+INSERT INTO `applications` VALUES (149, 'Diffchecker-文本比较', 'https://www.diffchecker.com/favicon.ico', 'https://www.diffchecker.com/zh-Hans/', 'Diffchecker 将比较文本以找出两个文本文件之间的差异。只需粘贴您的文件，然后单击查找差异！', 'active', 45, '2024-09-02 09:02:48.686', '2024-11-08 11:24:06.576', 0, '#000000');
 INSERT INTO `applications` VALUES (150, '后浪云', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_aca33f89fb18b.png', 'https://www.idc.net/addons?_plugin=13&_controller=index&_action=index', '后浪云专注于简单好用，价格厚道的香港云服务器、美国云服务器、香港服务器、美国服务器、日韩服务器等全球IDC服务。APNIC+ARIN双会员，IDC+ISP+ICP资质，15年运营经验。服务热线：4000-070-040。服务网站: IDC.NET。', 'active', 43, '2024-09-02 09:02:48.686', '2024-10-15 11:28:58.687', 1, '#000000');
 INSERT INTO `applications` VALUES (151, '知乎网', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_1c3647688e840.png', 'https://www.zhihu.com/', '知乎,中文互联网高质量的问答社区和创作者聚集的原创内容平台', 'active', 48, '2024-09-02 09:02:48.686', '2024-10-10 16:39:36.334', 0, '#000000');
 INSERT INTO `applications` VALUES (152, 'Chat评测榜单', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_d205ccdd9ff52.png', 'https://rank.opencompass.org.cn/leaderboard-llm', '评测榜单旨在为大语言模型和多模态模型提供全面、客观且中立的得分与排名，同时提供多能力维度的评分参考，以便用户能够更全面地了解大模型的能力水平。', 'active', 44, '2024-09-02 09:02:48.686', '2024-10-10 16:39:43.557', 0, '#000000');
 INSERT INTO `applications` VALUES (153, 'Golang中文社区', 'https://pic2.ziyuan.wang/user/hozh/diy/navicon/favicon_205797a06c09a.ico', 'https://studygolang.com/', 'Go语言中文网，中国 Golang 社区，Go语言学习园地，致力于构建完善的 Golang 中文社区，Go语言爱好者的学习家园。分享 Go 语言知识，交流使用经验', 'active', 70, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', -9, '#000000');
 INSERT INTO `applications` VALUES (154, '地鼠文档', 'https://www.topgoer.cn/favicon.ico', 'https://www.topgoer.cn/', 'go语言文档网站通过收集整理go语言相关的学习文档，为大家提供一个学习平台', 'active', 70, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
-INSERT INTO `applications` VALUES (155, 'Gin中文文档 · 看云', 'https://www.kancloud.cn/favicon.ico', 'https://www.kancloud.cn/shuangdeyu/gin_book/949411', 'Gin中文参考文档', 'active', 70, '2024-09-02 09:02:48.686', '2024-09-03 17:58:57.652', 0, '#000000');
+INSERT INTO `applications` VALUES (155, 'Gin中文文档 · 看云', 'simple-icons:gin', 'https://www.kancloud.cn/shuangdeyu/gin_book/949411', 'Gin中文参考文档', 'active', 70, '2024-09-02 09:02:48.686', '2024-11-08 11:23:11.890', 0, '#0062FF');
 INSERT INTO `applications` VALUES (156, 'Go入门教程', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_b665f83d53715.png', 'https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0MDI3MTE0MQ==&action=getalbum&album_id=2587461366412787713&scene=173&from_msgid=2247486604&from_itemidx=2&count=3&nolastread=1#wechat_redirect', 'Golang 入门级教程', 'active', 70, '2024-09-02 09:02:48.686', '2024-10-10 16:39:00.881', 0, '#000000');
 INSERT INTO `applications` VALUES (157, 'Go Guide学习指南', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_225869ce155bc.png', 'https://github.com/coderit666/GoGuide', '「Go语言学习指南」一份涵盖大部分 Golang 程序员所需要掌握的核心知识，拥有 Go语言教程、Go开源书籍、Go语言入门教程、Go语言学习路线。零基础学习 Go语言、Go编程，首选 GoGuide。', 'active', 70, '2024-09-02 09:02:48.686', '2024-10-10 16:38:57.361', 0, '#000000');
 INSERT INTO `applications` VALUES (158, 'go.dev', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_f9d6858e3efb5.png', 'https://go.dev/', 'Go is an open source programming language that makes it simple to build secure, scalable systems.', 'active', 70, '2024-09-02 09:02:48.686', '2024-10-10 16:38:54.306', -10, '#000000');
@@ -187,11 +187,13 @@ INSERT INTO `applications` VALUES (239, '硬核TV', 'https://pic2.ziyuan.wang/us
 INSERT INTO `applications` VALUES (240, 'ChatGPT店铺', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_68e1f9f6ad134.png', 'https://fk.lqqq.ltd/', 'LQ店铺', 'active', 44, '2024-10-21 16:39:34.793', '2024-10-21 16:39:34.793', 0, '#000000');
 INSERT INTO `applications` VALUES (241, 'Yesicon', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_46169f457576a.png', 'https://yesicon.app/', '185 icon sets with 240k+ icons, search across icon sets in multiple languages, rich filtering by type and style, quick customization of icon colors, sizes and code styles, one-click copy and download for developers and designers', 'active', 82, '2024-10-23 15:59:19.725', '2024-10-23 15:59:19.725', 0, '#000000');
 INSERT INTO `applications` VALUES (242, '面试鸭 - 程序员刷题神器', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_cd1720f5cbdd9.png', 'https://www.mianshiya.com/', '程序员面试刷题，就来面试鸭，程序员免费求职面试刷题网站。海量高频Java,前端,后端,C++,Go,Python,软件测试,IT运维,数据库,SQL,数据结构,算法面试题和优质题解，助你通关校招,社招,实习,国企,互联网,大厂,考研求职面试。帮你备战技术面试、提升编程技术、快速找到工作。面试鸭，程序员求职面试刷题神器。', 'active', 42, '2024-10-24 11:10:54.974', '2024-11-04 09:31:34.929', 0, '#000000');
-INSERT INTO `applications` VALUES (243, 'FRE123 免费资源共享平台', 'https://img.fre123.com/i/2023/11/25/65619e791f166.ico', 'https://www.fre321.com/', 'FRE123 专注于为您提供各种免费优质资源，包括影视资源、动漫番剧、软件工具等。无论您在寻找哪种资源，我们都将尽力为您提供，为您的学习或工作助力', 'active', 83, '2024-10-28 10:26:03.551', '2024-11-07 13:24:28.744', 0, '#000000');
+INSERT INTO `applications` VALUES (243, 'FRE123 资源平台', 'https://img.fre123.com/i/2023/11/25/65619e791f166.ico', 'https://www.fre321.com/', 'FRE123 专注于为您提供各种免费优质资源，包括影视资源、动漫番剧、软件工具等。无论您在寻找哪种资源，我们都将尽力为您提供，为您的学习或工作助力', 'active', 83, '2024-10-28 10:26:03.551', '2024-11-08 11:18:36.496', 0, '#000000');
 INSERT INTO `applications` VALUES (244, 'CrazyGames', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_0153e44984b9b.png', 'https://www.crazygames.com/', '在 CrazyGames 玩免费在线游戏，这里是玩高品质浏览器游戏的最佳场所。我们每天都会添加新游戏，玩得开心.', 'active', 50, '2024-11-04 09:30:45.226', '2024-11-04 09:30:45.226', 0, '#000000');
 INSERT INTO `applications` VALUES (246, '程序员导航网', 'https://www.haonav.cn/favicon.ico', 'https://www.haonav.cn/#id_zuixin', '程序员导航网是一个致力于一站式程序员工作学习导航网站,汇聚程序员必备常用网址,以让程序员使用更便捷为使命,始终围绕程序员需求,为程序员提供最新工具导航。', 'active', 83, '2024-11-07 13:20:50.896', '2024-11-07 13:25:53.167', -10, '#000000');
 INSERT INTO `applications` VALUES (247, '即时工具', 'https://www.67tool.com/favicon.ico', 'https://www.67tool.com/', '致力开发即用即走型在线工具，无需客户端在线一键使用。拥有视频工具、音频工具、图片工具、 PDF工具、办公辅助、设计工具、文本工具、数字工具、加密工具、单位转换等等工具。同时拥有良好的用户体验，为您的工作学习提升效率！', 'active', 83, '2024-11-07 13:21:19.866', '2024-11-07 13:24:15.372', 0, '#000000');
 INSERT INTO `applications` VALUES (248, '爱达导航', 'https://adzhp.xyz/wp-content/uploads/2020/02/A-win.ico', 'https://adzhp.xyz/', '爱达杂货铺收集精品网络免费资源、包括免费视频、网盘搜索、软件、网站和各类资源，欢迎前来探索。', 'active', 83, '2024-11-07 13:22:03.254', '2024-11-07 13:24:00.546', 0, '#000000');
+INSERT INTO `applications` VALUES (249, '影视宝藏导航', 'https://pic2.ziyuan.wang/user/hozh/diy/icofolder/icon_a4549939c32d5.png', 'https://tv.baozangdh.com/', '影视宝藏导航,一个有用的宝藏网址导航', 'active', 83, '2024-11-07 14:20:32.239', '2024-11-07 14:20:32.239', 0, '#000000');
+INSERT INTO `applications` VALUES (250, '免费AI解梦', 'https://dream-interpretation.ai/favicon.ico', 'https://dream-interpretation.ai/zh', '免费AI驱动的周公解梦服务 - 使用先进的人工智能立即获得对您梦境的深入解析', 'active', 44, '2024-11-08 09:33:14.641', '2024-11-08 09:33:26.343', 0, '#000000');
 
 -- ----------------------------
 -- Table structure for menus
@@ -229,7 +231,7 @@ INSERT INTO `menus` VALUES (69, '后端开发', 'fluent:window-dev-tools-16-fill
 INSERT INTO `menus` VALUES (70, 'GO开发', 'tabler:brand-golang', 'active', '2024-09-03 02:16:13.063', '2024-09-03 02:16:13.063', -1, '#00D4FF', 47);
 INSERT INTO `menus` VALUES (81, '接口平台', 'hugeicons:api', 'active', '2024-10-17 16:47:03.702', '2024-10-17 16:48:53.302', -3, '#0B4B60', NULL);
 INSERT INTO `menus` VALUES (82, '图标库', 'tabler:icons', 'active', '2024-10-23 15:58:32.123', '2024-10-23 15:58:32.123', 0, '#6530A6', 45);
-INSERT INTO `menus` VALUES (83, '资源整合', 'carbon:software-resource-cluster', 'active', '2024-11-07 13:23:36.524', '2024-11-07 13:23:46.235', -2, '#6530A6', NULL);
+INSERT INTO `menus` VALUES (83, '资源导航', 'carbon:software-resource-cluster', 'active', '2024-11-07 13:23:36.524', '2024-11-07 14:20:49.897', -2, '#6530A6', NULL);
 
 -- ----------------------------
 -- Table structure for site_settings
@@ -275,7 +277,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', '$2a$14$sPGm1IlkbU8626h9pRPw7Ok2NN8JgDj.3d2d7rzmhL3cTZXG259xa', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzMxMDQzMTg5fQ.bneR4ttXgjpJlgm31nm4vsPXHZJ8A4K1wpjFOoQ4YAQ', '2024-09-11 14:40:42.069', '2024-11-07 13:35:12.718', NULL, 1);
+INSERT INTO `users` VALUES (1, 'admin', '$2a$14$S9NDvQNvOdOzRIoMj9XUVum98kPNhbXQSyyIHT68vIRWvptbWyHdy', '2024-09-11 14:40:40.941', 'enabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzMxMDQzMTg5fQ.bneR4ttXgjpJlgm31nm4vsPXHZJ8A4K1wpjFOoQ4YAQ', '2024-09-11 14:40:42.069', '2024-11-08 11:27:21.250', NULL, 1);
 INSERT INTO `users` VALUES (15, 'zh', '$2a$14$3ikAJJvQF/RqURuFt9A3mOrZZv3AKknYeb2xh/59QTQ.qNs1GffjC', '2024-09-12 14:42:11.844', 'disabled', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InpoIiwiZXhwIjoxNzI2ODAyNTQwfQ.dxJ42P5ZckijTn0kIL5nkNNQZIMBkvqEMiBXK0o6Jgk', '2024-09-12 14:42:11.845', '2024-10-15 11:34:19.057', NULL, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
