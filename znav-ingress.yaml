@@ -18,3 +18,4 @@ spec:
             name: znav-frontend
             port:
               number: 80
+              
