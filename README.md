@@ -14,7 +14,7 @@ docker-compose -f docker-compose.image.yml up -d
 docker-compose -f docker-compose.build.yml up --build -d
 
 ### web访问：
-http:ip
+http://你的IP
 admin
 admin
 
